@@ -1,0 +1,21 @@
+.headerContainer {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+}
+
+.logo {
+    height: 4rem;
+    margin-left: 2rem;
+}
+
+.contactText {
+    margin-right: 3rem;
+    display: flex;
+}
+
+.contactLogo {
+    margin-left: 0.4rem;
+}
