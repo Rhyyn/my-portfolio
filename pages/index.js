@@ -42,7 +42,7 @@ export default function Home() {
             <h2 className={homeStyles.reactJobText}>React</h2>
           <div className={homeStyles.jobDescTextContainer}>
             <p className={homeStyles.jobDescText}>Currently looking for</p>
-            <p className={homeStyles.jobDescText}>job opporutnities</p>
+            <p className={homeStyles.jobDescText}>job opportunities</p>
           </div>
           <div className = {homeStyles.buttonContainer}>
             <span className = {homeStyles.button}>Projects</span>
