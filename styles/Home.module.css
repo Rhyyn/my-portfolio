@@ -20,7 +20,7 @@
 .nameText {
   margin: 0;
   font-family: "ink free";
-  font-size: 6rem;
+  font-size: 4rem;
   -webkit-animation: nameText 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   animation: nameText 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
@@ -37,6 +37,8 @@
   margin: 0;
   color: #3fc7e9;
   text-shadow: 0 0 4px #3fc7e9;
+  margin: 0.8rem;
+  margin-bottom: 1.2rem;
 }
 
 .jobDescTextContainer {
@@ -45,14 +47,32 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin-top: 1rem;
 }
 .jobDescTextContainer > p {
   margin: 0;
 }
 
+/* --- SKILLS --- */
+
+.skills{
+  font-family: "JetBrains Mono", monospace;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.singleSkillContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+
+
 .buttonContainer {
-  margin-top: 8rem;
+  margin-top: 3rem;
 }
 
 .button {
