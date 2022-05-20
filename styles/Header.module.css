@@ -1,21 +1,26 @@
 .headerContainer {
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: white;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+}
+@media only screen and (max-height: 850px) {
+  .headerContainer {
+    margin-bottom: 2rem;
+  }
 }
 
 .logo {
-    height: 4rem;
-    margin-left: 2rem;
+  height: 4rem;
+  margin-left: 2rem;
 }
 
 .contactText {
-    margin-right: 3rem;
-    display: flex;
+  margin-right: 3rem;
+  display: flex;
 }
 
 .contactLogo {
-    margin-left: 0.4rem;
+  margin-left: 0.4rem;
 }
