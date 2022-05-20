@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import { useRouter } from 'next/router'
 import homeStyles from "../styles/Home.module.css";
 import headerStyles from "../styles/Header.module.css";
 import { BiMailSend } from "react-icons/bi";
@@ -13,6 +14,7 @@ import {
 } from "react-icons/si";
 
 export default function Home() {
+  const router = useRouter();
   const advancedSkills = {
     skills: [
       { name: "TypeScript", icon: <SiTypescript /> },
@@ -23,6 +25,12 @@ export default function Home() {
       { name: "Chakra-UI", icon: <SiChakraui /> },
     ],
   };
+
+  const handleClick = e => {
+    e.preventDefault()
+    router.push('/projects')
+  };
+
   return (
     <div className={homeStyles.pageContainer}>
       <Head>
@@ -72,8 +80,8 @@ export default function Home() {
             })}
           </div>
           <div className={homeStyles.buttonContainer}>
-            <span className={homeStyles.button}>Projects</span>
-            <span className={homeStyles.button}>About Me</span>
+            <button className={homeStyles.button} onClick={handleClick}>Projects</button>
+            <button className={homeStyles.button}>About Me</button>
           </div>
         </div>
       </main>
