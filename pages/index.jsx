@@ -13,14 +13,6 @@ import {
 } from "react-icons/si";
 
 export default function Home() {
-  // const advancedSkills = [
-  //   "TypeScript",
-  //   "Javascript",
-  //   "HTML5",
-  //   "CSS",
-  //   "Material-UI",
-  //   "ChakraUI",
-  // ];
   const advancedSkills = {
     skills: [
       { name: "TypeScript", icon: <SiTypescript /> },
@@ -31,10 +23,6 @@ export default function Home() {
       { name: "Chakra-UI", icon: <SiChakraui /> },
     ],
   };
-  advancedSkills.skills.map((item, index) => {
-    return console.log(item.name);
-  });
-  const decentSkills = ["Typescript", "NextJS"];
   return (
     <div className={homeStyles.pageContainer}>
       <Head>
