@@ -1,11 +1,13 @@
-import React from 'react'
+import React from "react";
 import homeStyles from "../styles/Home.module.css";
-import headerStyles from "../styles/Header.module.css";
+import Header from "../components/Header";
 
 const projects = () => {
   return (
-    <div className={homeStyles.pageContainer}>projects</div>
-  )
-}
+    <div className={homeStyles.pageContainer}>
+      <Header></Header>
+    </div>
+  );
+};
 
-export default projects
+export default projects;
