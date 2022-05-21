@@ -1,9 +1,8 @@
 import Head from "next/head";
-import Image from "next/image";
-import { useRouter } from 'next/router'
+import { useRouter } from "next/router";
 import homeStyles from "../styles/Home.module.css";
-import headerStyles from "../styles/Header.module.css";
-import { BiMailSend } from "react-icons/bi";
+import Header from "../components/Header";
+import Link from "next/link";
 import {
   SiTypescript,
   SiJavascript,
@@ -11,24 +10,45 @@ import {
   SiCss3,
   SiMaterialui,
   SiChakraui,
+  SiSass,
 } from "react-icons/si";
+
+const Content = {
+  en: {
+    jobText: "Front End developper",
+    jobDescText: "Currently looking for",
+    jobDescText2: "Job opportunities.",
+    button1: "Projects",
+    button2: "About Me",
+  },
+  fr: {
+    jobText: "Développeur Front End",
+    jobDescText: "Actuellement à la recherche",
+    jobDescText2: "D'offres d'emplois.",
+    button1: "Projets",
+    button2: "Profil",
+  },
+};
 
 export default function Home() {
   const router = useRouter();
+  const { locale, locales, defaultLocale, asPath } = useRouter();
+  const { jobText, jobDescText, jobDescText2, button1, button2 } =
+    Content[locale];
   const advancedSkills = {
     skills: [
       { name: "TypeScript", icon: <SiTypescript /> },
       { name: "Javascript", icon: <SiJavascript /> },
       { name: "HTML5", icon: <SiHtml5 /> },
       { name: "CSS3", icon: <SiCss3 /> },
-      { name: "Material-UI", icon: <SiMaterialui /> },
+      { name: "Sass", icon: <SiSass /> },
       { name: "Chakra-UI", icon: <SiChakraui /> },
     ],
   };
 
-  const handleClick = e => {
-    e.preventDefault()
-    router.push('/projects')
+  const handleClick = (e) => {
+    e.preventDefault();
+    router.push("/projects");
   };
 
   return (
@@ -47,32 +67,20 @@ export default function Home() {
           rel="stylesheet"
         />
       </Head>
-      <header className={headerStyles.header}>
-        <div className={headerStyles.headerContainer}>
-          <img
-            className={headerStyles.logo}
-            alt="logo.png"
-            src="/logo.png"
-          ></img>
-          <span className={headerStyles.contactText}>
-            Contact
-            <BiMailSend className={headerStyles.contactLogo} size={25} />
-          </span>
-        </div>
-      </header>
+      <Header></Header>
       <main>
         <div className={homeStyles.mainContainer}>
           <h1 className={homeStyles.nameText}>Tony Migeon</h1>
-          <h3 className={homeStyles.jobText}>Front-end developper</h3>
+          <h3 className={homeStyles.jobText}>{jobText}</h3>
           <h2 className={homeStyles.reactJobText}>React</h2>
           <div className={homeStyles.jobDescTextContainer}>
-            <p className={homeStyles.jobDescText}>Currently looking for</p>
-            <p className={homeStyles.jobDescText}>job opportunities</p>
+            <p className={homeStyles.jobDescText}>{jobDescText}</p>
+            <p className={homeStyles.jobDescText}>{jobDescText2}</p>
           </div>
           <div className={homeStyles.skills}>
             {advancedSkills.skills.map((skill, index) => {
               return (
-                <div className={homeStyles.singleSkillContainer}>
+                <div key={index} className={homeStyles.singleSkillContainer}>
                   <h4 className={homeStyles.advancedSkills}>{skill.name}</h4>
                   {skill.icon}
                 </div>
@@ -80,8 +88,10 @@ export default function Home() {
             })}
           </div>
           <div className={homeStyles.buttonContainer}>
-            <button className={homeStyles.button} onClick={handleClick}>Projects</button>
-            <button className={homeStyles.button}>About Me</button>
+            <button className={homeStyles.button} onClick={handleClick}>
+              {button1}
+            </button>
+            <button className={homeStyles.button}>{button2}</button>
           </div>
         </div>
       </main>
