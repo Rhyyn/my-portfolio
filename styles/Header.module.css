@@ -15,11 +15,18 @@
   margin-left: 2rem;
 }
 
-.contactText {
-  margin-right: 3rem;
-  display: flex;
+.localesContainer {
+  margin-right: 1rem;
 }
 
-.contactLogo {
-  margin-left: 0.4rem;
+.LanguageSwitchText {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
 }
+
+.LanguageSwitchSeparator {
+  margin: 0 5px 0 5px;
+}
+
+
