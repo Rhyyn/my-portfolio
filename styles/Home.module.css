@@ -6,6 +6,7 @@
   -o-background-size: cover;
   background-size: cover;
   height: 100vh;
+  font-family: 'Roboto Flex', sans-serif;
 }
 
 .mainContainer {
@@ -52,14 +53,16 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  margin-bottom: 1rem;
 }
 .jobDescTextContainer > p {
   margin: 0;
+  margin-bottom: 2rem;
 }
 
 /* --- SKILLS --- */
 
-.skills{
+.skills {
   font-family: "JetBrains Mono", monospace;
   margin-top: 1rem;
   display: flex;
@@ -86,7 +89,6 @@
   }
 } */
 
-
 .singleSkillContainer {
   display: flex;
   flex-direction: column;
@@ -97,27 +99,46 @@
   min-width: 112px;
 }
 
-
 .buttonContainer {
   margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .button {
   font-family: "JetBrains Mono", monospace;
-  font-size: 1rem;
+  /* font-family: 'Roboto Flex', sans-serif; */
+  font-size: 1.5rem;
   background: none;
   color: white;
-  padding: 0.5rem;
-  margin: 0 2.5rem 0 2.5rem;
-  border-radius: 10px;
-  /* border: none; 
-  text-shadow: 
-  0 0 3px #fff; */
+  padding: 1.3rem;
+  border: none;
   display: inline-block;
   text-decoration: none;
+  transition: transform 250ms;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+.buttonSpan {
+  text-decoration: underline;
+  text-underline-position: under;
 }
 
-.button::after {
+.button:hover {
+  transform: translateY(-0.5rem);
+}
+.button:hover span {
+  text-decoration-thickness: 2px;
+  font-weight: 600;
+}
+.contactLogo {
+  margin-left: 5px;
+}
+
+/* .button::after {
   content: "";
   display: block;
   width: 0;
@@ -127,8 +148,12 @@
 }
 .button:hover:after {
   width: 100%;
-  transition: width .3s;
-}
+  transition: width 0.3s;
+} */
+
+/* BUTTON TEST */
+
+/* */
 
 @media only screen and (max-width: 600px) {
   .button {
