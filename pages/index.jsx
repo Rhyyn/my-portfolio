@@ -38,12 +38,30 @@ export default function Home() {
     Content[locale];
   const advancedSkills = {
     skills: [
-      { name: "TypeScript", icon: <SiTypescript size={30} /> },
-      { name: "Javascript", icon: <SiJavascript size={30} /> },
-      { name: "HTML5", icon: <SiHtml5 size={30} /> },
-      { name: "CSS3", icon: <SiCss3 size={30} /> },
-      { name: "Sass", icon: <SiSass size={30} /> },
-      { name: "Chakra-UI", icon: <SiChakraui size={30} /> },
+      {
+        name: "TypeScript",
+        icon: <SiTypescript size={30} className={homeStyles.icon} />,
+      },
+      {
+        name: "Javascript",
+        icon: <SiJavascript size={30} className={homeStyles.icon} />,
+      },
+      {
+        name: "HTML5",
+        icon: <SiHtml5 size={30} className={homeStyles.icon} />,
+      },
+      { 
+        name: "CSS3",
+        icon: <SiCss3 size={30} className={homeStyles.icon} /> 
+      },
+      { 
+        name: "Sass", 
+        icon: <SiSass size={30} className={homeStyles.icon} /> 
+      },
+      {
+        name: "Chakra-UI",
+        icon: <SiChakraui size={30} className={homeStyles.icon} />,
+      },
     ],
   };
 
