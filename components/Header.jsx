@@ -7,14 +7,17 @@ const Header = () => {
   return (
     <header className={headerStyles.header}>
       <div className={headerStyles.headerContainer}>
-        <Image
-          className={headerStyles.logo}
-          alt="logo.png"
-          src="/logo.png"
-          height={64}
-          width={64}
-        ></Image>
-        <LanguageSwitch/>
+        <div className={headerStyles.imageContainer}>
+          <Image
+            className={headerStyles.logo}
+            alt="logo.png"
+            src="/logo.png"
+            height={64}
+            width={64}
+          ></Image>
+        </div>
+
+        <LanguageSwitch />
       </div>
     </header>
   );
