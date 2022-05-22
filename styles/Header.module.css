@@ -5,6 +5,10 @@
   justify-content: space-between;
   color: white;
 }
+.logo {
+  cursor: pointer;
+}
+
 @media only screen and (max-height: 850px) {
   .headerContainer {
     margin-bottom: 2rem;
@@ -33,6 +37,7 @@
     margin-right: 1rem;
   }
 }
+
 
 .LanguageSwitchText {
   cursor: pointer;
