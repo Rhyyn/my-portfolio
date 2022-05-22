@@ -10,13 +10,28 @@
     margin-bottom: 2rem;
   }
 }
-
-.logo {
-  margin-left: 2rem;
+.imageContainer {
+  margin-left: 5rem;
 }
 
 .localesContainer {
-  margin-right: 1rem;
+  margin-right: 5rem;
+}
+@media only screen and (max-width: 850px) {
+  .imageContainer {
+    margin-left: 2.5rem;
+  }
+  .localesContainer {
+    margin-right: 2.5rem;
+  }
+}
+@media only screen and (max-width: 430px) {
+  .imageContainer {
+    margin-left: 1rem;
+  }
+  .localesContainer {
+    margin-right: 1rem;
+  }
 }
 
 .LanguageSwitchText {

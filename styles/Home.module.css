@@ -25,11 +25,6 @@
   -webkit-animation: nameText 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   animation: nameText 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
-@media only screen and (max-width: 450px) {
-  .nameText {
-    font-size: 3.3rem;
-  }
-}
 
 .jobText {
   font-family: "JetBrains Mono", monospace;
@@ -72,12 +67,7 @@
   flex-wrap: wrap;
   justify-content: center;
 }
-@media only screen and (max-width: 450px) {
-  .skills {
-    font-size: 1rem;
-    max-width: 90%;
-  }
-}
+
 /* @media only screen and (max-width: 620px) {
   .skills {
     max-width: 500px;
@@ -154,6 +144,35 @@
 /* BUTTON TEST */
 
 /* */
+@media only screen and (max-width: 750px) {
+  .icon {
+    width: 20px;
+  }
+  .skills {
+    margin-top: 0.5rem;
+  }
+  .advancedSkills {
+    margin: 10px;
+  }
+  .buttonContainer {
+    margin-top: 0.2rem;
+  }
+  .button {
+    font-size: 1.3rem;
+  }
+  .jobDescTextContainer p {
+    margin-bottom: 0.5rem;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .skills {
+    font-size: 1rem;
+    max-width: 90%;
+  }
+  .nameText {
+    font-size: 3.3rem;
+  }
+}
 
 @media only screen and (max-width: 600px) {
   .button {
