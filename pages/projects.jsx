@@ -10,7 +10,7 @@ const projects = () => {
       {
         title: "Portfolio",
         desc: "Portfolio I built with NextJs, contains my Skills, my Projects, a little bit About Me and a Contact form",
-        image: "/portfolio02.png",
+        image: "/portfolio04.png",
       },
       {
         title: "Lost Ark Wandering Merchant Tracker",
@@ -20,12 +20,12 @@ const projects = () => {
       {
         title: "Harry Potter character displayer",
         desc: "Website that pulls data from the Harry Potter API and display characters cards, Search and filter by Students/Houses/Teacher and more",
-        image: "/portfolio02.png",
+        image: "/portfolio04.png",
       },
       {
         title: "Harry Potter character displayer",
         desc: "Website that pulls data from the Harry Potter API and display characters cards, Search and filter by Students/Houses/Teacher and more",
-        image: "/portfolio02.png",
+        image: "/portfolio04.png",
       },
     ],
   };
