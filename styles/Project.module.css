@@ -1,5 +1,5 @@
 .cardBox {
-  width: 90%;
+  width: 70%;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
@@ -13,14 +13,14 @@
   flex-direction: column;
   text-align: center;
   color: white;
-  background-color: rgb(24, 23, 23);
+  background-color: #346e55;
   /* background-color: #fff; */
   min-width: 10rem;
   height: auto;
-  max-width: 700px;
+  max-width: 500px;
   /* padding: 2rem; */
-  border: 1px solid #fff;
-  border-radius: 8px;
+  /* border: 2px solid #f9f871; */
+  /* border-radius: 8px; */
   margin: 2rem;
   overflow: auto;
 }
@@ -37,10 +37,15 @@
 
 .textContainer {
   min-width: 50%;
+  padding: 2rem;
 }
 
-@media only screen and (max-width: 2000px) {
+.title {
+  min-width: min-content;
+}
+
+/* @media only screen and (max-width: 2000px) {
   .card {
     max-width: 650px;
   }
-}
+} */
