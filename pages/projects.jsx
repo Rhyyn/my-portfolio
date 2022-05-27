@@ -33,13 +33,6 @@ const projects = () => {
   return (
     <div className={homeStyles.pageContainer}>
       <Header></Header>
-      <div className={projectStyles.cardBox}>
-        {projectsList.projects.map((project, index) => {
-          return (
-            <Card key={index} project={project}></Card>
-          );
-        })}
-      </div>
     </div>
   );
 };
