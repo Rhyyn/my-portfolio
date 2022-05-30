@@ -13,11 +13,11 @@ function MyApp({ Component, pageProps }) {
             },
             secondary: {
                 main: "#cc2b84",
-                contrastText: "fff",
+                contrastText: "#fff",
             },
             grey: {
-                50: "f0f0f0",
-                100: "e9e9e9",
+                50: "#f0f0f0",
+                100: "#e9e9e9",
             },
             typography: {
                 fontFamily: "Montserrat",
