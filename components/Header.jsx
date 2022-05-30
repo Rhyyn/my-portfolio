@@ -1,25 +1,44 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import headerStyles from "../styles/Header.module.css";
 import LanguageSwitch from "./LanguageSwitch";
-import { Container, Box } from "@mui/material";
+import { Box } from "@mui/material";
 import logo from "../public/logoDeepGreen.png";
+import { styled } from "@mui/material";
 
 const Header = () => {
+    const HeaderComponent = styled("header")(({ theme }) => ({
+        margin: "0",
+    }));
+
+    const HeaderContentComponent = styled("div")(({ theme }) => ({
+        height: "40px",
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+        backgroundColor: theme.palette.grey[100],
+        [theme.breakpoints.up("mobile")]: {
+            paddingRight: "2rem",
+            paddingLeft: "2rem",
+        },
+        [theme.breakpoints.up("tablet")]: {
+            paddingRight: "4rem",
+            paddingLeft: "4rem",
+        },
+        [theme.breakpoints.up("desktop")]: {
+            paddingRight: "6rem",
+            paddingLeft: "6rem",
+        },
+    }));
     return (
-        <header className={headerStyles.header}>
-            <Container
-                disableGutters={true}
-                maxWidth="false"
-                sx={{ paddingRight: "0" }}
-            >
-                <Box sx={{ height: "20px", bgcolor: "primary.main" }}></Box>
-                <Box sx={{ height: "40px", bgcolor: "#fff" }}>
+        <HeaderComponent>
+                <Box sx={{ height: "10px", bgcolor: "primary.main" }}></Box>
+                <HeaderContentComponent>
                     <Image src={logo}></Image>
-                </Box>
-            </Container>
-        </header>
+                    <LanguageSwitch></LanguageSwitch>
+                </HeaderContentComponent>
+
+        </HeaderComponent>
     );
 };
 
