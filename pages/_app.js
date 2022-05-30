@@ -6,7 +6,7 @@ function MyApp({ Component, pageProps }) {
     const theme = createTheme({
         palette: {
             primary: {
-                main: "#105b34",
+                main: "#104d2b",
                 light: "#6cd59b",
                 dark: "#2bcc73",
                 contrastText: "#fff",
@@ -26,6 +26,14 @@ function MyApp({ Component, pageProps }) {
                 fontWeightMedium: "600"
             },
         },
+        breakpoints: {
+            values: {
+                mobile: 0,
+                tablet: 550,
+                laptop: 1024,
+                desktop: 1200
+            }
+        }
     });
     return (
         <ThemeProvider theme={theme}>
