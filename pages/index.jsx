@@ -14,7 +14,7 @@ export default function Home() {
     };
 
     return (
-        <Box>
+        <Box sx={{backgroundColor: '#e9e9e9'}}>
             <Head>
                 <title>Tony Migeon Portfolio</title>
                 <meta
@@ -25,7 +25,7 @@ export default function Home() {
             </Head>
             <Header></Header>
             <HomeMain></HomeMain>
-            <Footer></Footer>
+            {/* <Footer></Footer> */}
         </Box>
     );
 }
