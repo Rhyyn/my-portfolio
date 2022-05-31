@@ -4,8 +4,6 @@ import { Box } from "@mui/system";
 
 const Footer = () => {
     const FooterComponent = styled("div")(({ theme }) => ({
-        height: "50px",
-        backgroundColor: theme.palette.grey[100]
     }));
     return (
         <FooterComponent>
