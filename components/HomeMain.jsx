@@ -4,12 +4,6 @@ import { styled, shadows } from "@mui/system";
 import { useRouter } from "next/router";
 import { Typography, Box, Button } from "@mui/material";
 import {
-    SiTypescript,
-    SiJavascript,
-    SiHtml5,
-    SiCss3,
-    SiMaterialui,
-    SiNextdotjs,
     SiGithub,
     SiLinkedin,
 } from "react-icons/si";
@@ -42,7 +36,7 @@ const HomeMain = () => {
     const HomeSection = styled("section")(({ theme }) => ({
         width: "90vw",
         margin: "0 auto",
-        height: "calc(100vh - 70px)",
+        height: "100%",
         boxShadow: theme.shadows[24],
         // background: `url(/wavyBackground.png)`,
         // backgroundRepeat: "no-repeat",
@@ -73,101 +67,19 @@ const HomeMain = () => {
         },
     }));
 
-    const HomeGlobalFooterDiv = styled("div")(({ theme }) => ({
-        [theme.breakpoints.up("mobile")]: {
-            display: "flex",
-            justifyContent: "center",
-            flexDirection: "column",
-            marginTop: "1rem",
-        },
-        [theme.breakpoints.up("tablet")]: {
-            display: "flex",
-            justifyContent: "center",
-            flexDirection: "column",
-        },
-        [theme.breakpoints.up("laptop")]: {
-            display: "flex",
-            flexDirection: "column",
-        },
-    }));
-
     const HomeButtonDiv = styled("div")(({ theme }) => ({
-        [theme.breakpoints.up("mobile")]: {
-            display: "flex",
-            justifyContent: "center",
-            marginBottom: "0.4rem",
-        },
-        [theme.breakpoints.up("tablet")]: {
-            display: "flex",
-            justifyContent: "center",
-            marginBottom: "0.4rem",
-        },
-        [theme.breakpoints.up("laptop")]: {
-            display: "flex",
-            justifyContent: "center",
-            marginBottom: "0.4rem",
-        },
+        display: "flex",
+        justifyContent: "center",
+        marginBottom: "1rem",
     }));
 
-    const HomeSkillsDiv = styled("div")(({ theme }) => ({
-        [theme.breakpoints.up("mobile")]: {
-            display: "flex",
-            flexWrap: "wrap",
-            justifyContent: "center",
-            maxWidth: "25rem",
-            margin: "0 auto",
-            marginBottom: "2rem",
-        },
-        [theme.breakpoints.up("tablet")]: {
-            display: "flex",
-            flexWrap: "wrap",
-            justifyContent: "center",
-            maxWidth: "25rem",
-            margin: "0 auto",
-            marginBottom: "2rem",
-        },
-        [theme.breakpoints.up("laptop")]: {
-            display: "flex",
-            flexWrap: "wrap",
-            justifyContent: "center",
-            maxWidth: "25rem",
-            margin: "0 auto",
-            marginBottom: "2rem",
-        },
-    }));
+    
 
     const router = useRouter();
     const { locale, locales, defaultLocale, asPath } = useRouter();
     const { greeting, intro, name, job, library, projects, aboutme, contact } =
         Content[locale];
-    const advancedSkills = {
-        skills: [
-            {
-                name: "TypeScript",
-                icon: <SiTypescript size={30} color="#104d2b" />,
-            },
-            {
-                name: "Javascript",
-                icon: <SiJavascript size={30} color="#104d2b" />,
-            },
-            {
-                name: "HTML5",
-                icon: <SiHtml5 size={30} color="#104d2b" />,
-            },
-            {
-                name: "CSS3",
-                icon: <SiCss3 size={30} color="#104d2b" />,
-            },
-            {
-                name: "MaterialUI",
-                icon: <SiMaterialui size={30} color="#104d2b" />,
-            },
-            {
-                name: "NextJs",
-                icon: <SiNextdotjs size={30} color="#104d2b" />,
-            },
-        ],
-    };
+    
     return (
         <HomeSection>
             <HomeGreetingDiv>
@@ -182,7 +94,7 @@ const HomeMain = () => {
                         variant="h1"
                         sx={{
                             color: { mobile: "primary.contrastText" },
-                            fontSize: { mobile: "2.5rem", tablet: "3rem" },
+                            fontSize: { mobile: "2.3rem", tablet: "3rem" },
                             verticalAlign: "middle",
                             textShadow: "1px 1px 2px rgba(150, 150, 150, 1)",
                         }}
@@ -194,7 +106,7 @@ const HomeMain = () => {
                             variant="h4"
                             sx={{
                                 color: "primary.contrastText",
-                                fontSize: { mobile: "1.7rem", tablet: "2rem" },
+                                fontSize: { mobile: "1.5rem", tablet: "2rem" },
                                 paddingTop: { mobile: "11px", tablet: "14px" },
                                 paddingLeft: "1rem",
                                 textShadow:
@@ -216,7 +128,7 @@ const HomeMain = () => {
                         variant="h2"
                         sx={{
                             color: "primary.main",
-                            fontWeight: "400",
+                            fontWeight: "500",
                             fontSize: { mobile: "1.5rem", tablet: "2rem" },
                             marginBottom: "1rem",
                             marginTop: "0.7rem",
@@ -228,7 +140,7 @@ const HomeMain = () => {
                         variant="p"
                         sx={{
                             fontWeight: "600",
-                            fontSize: { mobile: "1.1rem" },
+                            fontSize: { mobile: "0.9rem" },
                             color: "primary.contrastText",
                             maxWidth: "20rem",
                             textAlign: "center",
@@ -237,15 +149,23 @@ const HomeMain = () => {
                     >
                         {library}
                     </Typography>
-                    <Box sx={{ display: "flex", flexDirection: "row" }}>
-                        <Box sx={{ padding: "1rem", paddingBottom: "0" }}>
+                    <Box
+                        sx={{
+                            display: "flex",
+                            flexDirection: "row",
+                            minWidth: "230px",
+                            justifyContent: 'center',
+                            padding: '1rem 0 1rem 0'
+                        }}
+                    >
+                        <Box sx={{ minWidth: '83px', margin: '0 1rem 0 1rem', display: 'flex', justifyContent: 'center' }}>
                             <Link href="https://www.linkedin.com/in/tony-migeon-1303b1222/">
                                 <a>
                                     <SiLinkedin size={30} color="#104d2b" />
                                 </a>
                             </Link>
                         </Box>
-                        <Box sx={{ padding: "1rem" }}>
+                        <Box sx={{ minWidth: '83px', margin: '0 1rem 0 1rem', display: 'flex', justifyContent: 'center' }}>
                             <Link href="https://github.com/Rhyyn">
                                 <a>
                                     <SiGithub size={30} color="#104d2b" />
@@ -253,63 +173,36 @@ const HomeMain = () => {
                             </Link>
                         </Box>
                     </Box>
+                    <HomeButtonDiv>
+                        <Button // project redirect button
+                            sx={{
+                                backgroundColor: "secondary.main",
+                                color: "secondary.contrastText",
+                                margin: "0 1rem 0 1rem",
+                                height: "30px",
+                                fontSize: "0.8rem",
+                                fontWeight: "600",
+                                minWidth: "83px",
+                            }}
+                        >
+                            {contact}
+                        </Button>
+                        <Button // project redirect button
+                            sx={{
+                                backgroundColor: "secondary.main",
+                                color: "secondary.contrastText",
+                                margin: "0 1rem 0 1rem",
+                                height: "30px",
+                                fontSize: "0.8rem",
+                                fontWeight: "600",
+                                minWidth: "83px",
+                            }}
+                        >
+                            {aboutme}
+                        </Button>
+                    </HomeButtonDiv>
                 </Box>
             </HomeGreetingDiv>
-            <HomeGlobalFooterDiv>
-                <HomeSkillsDiv>
-                    {advancedSkills.skills.map((skill, index) => {
-                        // div for skills displays
-                        return (
-                            <Box
-                                key={index}
-                                sx={{
-                                    padding: "0 0.5rem",
-                                    textAlign: "center",
-                                    minWidth: "94px",
-                                }}
-                            >
-                                <Typography
-                                    sx={{
-                                        color: "primary.main",
-                                        fontWeight: "500",
-                                    }}
-                                >
-                                    {skill.name}
-                                </Typography>
-                                {skill.icon}
-                            </Box>
-                        );
-                    })}
-                </HomeSkillsDiv>
-                <HomeButtonDiv>
-                    <Button // project redirect button
-                        sx={{
-                            backgroundColor: "secondary.main",
-                            color: "secondary.contrastText",
-                            margin: "0 1rem 0 1rem",
-                            height: "30px",
-                            fontSize: "0.8rem",
-                            fontWeight: "600",
-                            minWidth: "83px",
-                        }}
-                    >
-                        {aboutme}
-                    </Button>
-                    <Button // project redirect button
-                        sx={{
-                            backgroundColor: "secondary.main",
-                            color: "secondary.contrastText",
-                            margin: "0 1rem 0 1rem",
-                            height: "30px",
-                            fontSize: "0.8rem",
-                            fontWeight: "600",
-                            minWidth: "83px",
-                        }}
-                    >
-                        {contact}
-                    </Button>
-                </HomeButtonDiv>
-            </HomeGlobalFooterDiv>
         </HomeSection>
     );
 };
