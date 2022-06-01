@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import { Box } from "@mui/material";
 import HomeMain from "../components/HomeMain";
 import Footer from "../components/Footer";
+import HomeProjects from "../components/HomeProjects";
 
 
 
@@ -14,7 +15,7 @@ export default function Home() {
     };
 
     return (
-        <Box sx={{backgroundColor: '#e9e9e9'}}>
+        <Box sx={{backgroundColor: '#e9e9e9', height: '100%'}}>
             <Head>
                 <title>Tony Migeon Portfolio</title>
                 <meta
@@ -25,6 +26,7 @@ export default function Home() {
             </Head>
             <Header></Header>
             <HomeMain></HomeMain>
+            <HomeProjects></HomeProjects>
             {/* <Footer></Footer> */}
         </Box>
     );
