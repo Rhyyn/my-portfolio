@@ -184,7 +184,7 @@ const HomeMain = () => {
                             color: { mobile: "primary.contrastText" },
                             fontSize: { mobile: "2.5rem", tablet: "3rem" },
                             verticalAlign: "middle",
-                            textShadow: '1px 1px 2px rgba(150, 150, 150, 1)'
+                            textShadow: "1px 1px 2px rgba(150, 150, 150, 1)",
                         }}
                     >
                         {greeting}
@@ -197,7 +197,8 @@ const HomeMain = () => {
                                 fontSize: { mobile: "1.7rem", tablet: "2rem" },
                                 paddingTop: { mobile: "11px", tablet: "14px" },
                                 paddingLeft: "1rem",
-                                textShadow: '1px 1px 2px rgba(150, 150, 150, 1)'
+                                textShadow:
+                                    "1px 1px 2px rgba(150, 150, 150, 1)",
                             }}
                         >
                             {intro}
@@ -218,7 +219,7 @@ const HomeMain = () => {
                             fontWeight: "400",
                             fontSize: { mobile: "1.5rem", tablet: "2rem" },
                             marginBottom: "1rem",
-                            marginTop: '0.7rem'
+                            marginTop: "0.7rem",
                         }}
                     >
                         {job}
@@ -231,20 +232,24 @@ const HomeMain = () => {
                             color: "primary.contrastText",
                             maxWidth: "20rem",
                             textAlign: "center",
-                            textShadow: '1px 1px 2px rgba(150, 150, 150, 1)'
+                            textShadow: "1px 1px 2px rgba(150, 150, 150, 1)",
                         }}
                     >
                         {library}
                     </Typography>
-                    <Box sx={{display: "flex", flexDirection: 'row' }}>
-                        <Box sx={{padding: '1rem', paddingBottom: '0'}}>
+                    <Box sx={{ display: "flex", flexDirection: "row" }}>
+                        <Box sx={{ padding: "1rem", paddingBottom: "0" }}>
                             <Link href="https://www.linkedin.com/in/tony-migeon-1303b1222/">
-                                <SiLinkedin size={30} color="#104d2b"/>
+                                <a>
+                                    <SiLinkedin size={30} color="#104d2b" />
+                                </a>
                             </Link>
                         </Box>
-                        <Box sx={{padding: '1rem'}}>
+                        <Box sx={{ padding: "1rem" }}>
                             <Link href="https://github.com/Rhyyn">
-                                <SiGithub size={30} color="#104d2b"/>
+                                <a>
+                                    <SiGithub size={30} color="#104d2b" />
+                                </a>
                             </Link>
                         </Box>
                     </Box>
