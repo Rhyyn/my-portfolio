@@ -15,7 +15,7 @@ export default function Home() {
     };
 
     return (
-        <Box sx={{backgroundColor: '#e9e9e9', height: '100%'}}>
+        <Box sx={{backgroundColor: '#e9e9e9', minHeight: '100vh'}}>
             <Head>
                 <title>Tony Migeon Portfolio</title>
                 <meta
