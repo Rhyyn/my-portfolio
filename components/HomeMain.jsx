@@ -33,7 +33,7 @@ const HomeMain = () => {
         },
     };
 
-    const HomeSection = styled("section")(({ theme }) => ({
+    const HomeIntroSection = styled("section")(({ theme }) => ({
         width: "90vw",
         margin: "0 auto",
         height: "100%",
@@ -81,7 +81,7 @@ const HomeMain = () => {
         Content[locale];
     
     return (
-        <HomeSection>
+        <HomeIntroSection>
             <HomeGreetingDiv>
                 <Box
                     sx={{
@@ -203,7 +203,7 @@ const HomeMain = () => {
                     </HomeButtonDiv>
                 </Box>
             </HomeGreetingDiv>
-        </HomeSection>
+        </HomeIntroSection>
     );
 };
 
