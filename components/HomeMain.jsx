@@ -1,14 +1,13 @@
-import React from "react";
+import { React, useState } from "react";
 import Link from "next/link";
 import { styled, shadows } from "@mui/system";
 import { useRouter } from "next/router";
 import { Typography, Box, Button } from "@mui/material";
-import {
-    SiGithub,
-    SiLinkedin,
-} from "react-icons/si";
+import { SiGithub, SiLinkedin } from "react-icons/si";
 
 const HomeMain = () => {
+    const [hoverColorLink, setHoverColorLink] = useState("#104d2b");
+    const [hoverColorGit, setHoverColorGit] = useState("#104d2b");
     const Content = {
         en: {
             greeting: "Hello,", // h1
@@ -73,13 +72,11 @@ const HomeMain = () => {
         marginBottom: "1rem",
     }));
 
-    
-
     const router = useRouter();
     const { locale, locales, defaultLocale, asPath } = useRouter();
     const { greeting, intro, name, job, library, projects, aboutme, contact } =
         Content[locale];
-    
+
     return (
         <HomeIntroSection>
             <HomeGreetingDiv>
@@ -154,23 +151,69 @@ const HomeMain = () => {
                             display: "flex",
                             flexDirection: "row",
                             minWidth: "230px",
-                            justifyContent: 'center',
-                            padding: '1rem 0 1rem 0'
+                            justifyContent: "center",
+                            padding: "1rem 0 1rem 0",
                         }}
                     >
-                        <Box sx={{ minWidth: '83px', margin: '0 1rem 0 1rem', display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center' }}>
-                        <Typography variant="subtitle1" sx={{ color: 'primary.main'}}>LinkedIn</Typography>
+                        <Box
+                            sx={{
+                                minWidth: "83px",
+                                margin: "0 1rem 0 1rem",
+                                display: "flex",
+                                justifyContent: "center",
+                                flexDirection: "column",
+                                alignItems: "center",
+                            }}
+                        >
+                            <Typography
+                                variant="subtitle1"
+                                sx={{ color: "primary.main" }}
+                            >
+                                LinkedIn
+                            </Typography>
                             <Link href="https://www.linkedin.com/in/tony-migeon-1303b1222/">
                                 <a target="_blank">
-                                    <SiLinkedin size={30} color="#104d2b" />
+                                    <SiLinkedin
+                                        size={30}
+                                        onMouseEnter={() =>
+                                            setHoverColorLink("#cc2b84")
+                                        }
+                                        onMouseLeave={() =>
+                                            setHoverColorLink("#104d2b")
+                                        }
+                                        color={hoverColorLink}
+                                    />
                                 </a>
                             </Link>
                         </Box>
-                        <Box sx={{ minWidth: '83px', margin: '0 1rem 0 1rem', display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center' }}>
-                        <Typography variant="subtitle1" sx={{ color: 'primary.main'}}>Github</Typography>
+                        <Box
+                            sx={{
+                                minWidth: "83px",
+                                margin: "0 1rem 0 1rem",
+                                display: "flex",
+                                justifyContent: "center",
+                                flexDirection: "column",
+                                alignItems: "center",
+                            }}
+                        >
+                            <Typography
+                                variant="subtitle1"
+                                sx={{ color: "primary.main" }}
+                            >
+                                Github
+                            </Typography>
                             <Link href="https://github.com/Rhyyn">
                                 <a target="_blank">
-                                    <SiGithub size={30} color="#104d2b" />
+                                    <SiGithub
+                                        size={30}
+                                        onMouseEnter={() =>
+                                            setHoverColorGit("#cc2b84")
+                                        }
+                                        onMouseLeave={() =>
+                                            setHoverColorGit("#104d2b")
+                                        }
+                                        color={hoverColorGit}
+                                    />
                                 </a>
                             </Link>
                         </Box>
