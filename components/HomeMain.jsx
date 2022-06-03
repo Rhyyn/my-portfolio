@@ -137,7 +137,7 @@ const HomeMain = () => {
                         {job}
                     </Typography>
                     <Typography // library text
-                        variant="p"
+                        variant="subtitle2"
                         sx={{
                             fontWeight: "600",
                             fontSize: { mobile: "0.9rem" },
