@@ -12,14 +12,14 @@ import { SiGithub } from "react-icons/si";
 
 const MyCard = (props) => {
     return (
-        <Card sx={{ maxWidth: "240px", margin: "1rem" }}>
-            <CardHeader title={props.name}></CardHeader>
+        <Card sx={{ maxWidth: "300px", margin: "1rem", textAlign: 'center', color: 'primary.main' }}>
+            <CardHeader title={props.name} ></CardHeader>
             <CardMedia
                 component="img"
-                height="140"
+                height="100%"
                 image={props.image}
             ></CardMedia>
-            <CardContent>
+            <CardContent >
                 <Typography variant="subtitle2">{props.desc}</Typography>
             </CardContent>
             <SiGithub size={20} />
