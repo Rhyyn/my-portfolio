@@ -158,14 +158,16 @@ const HomeMain = () => {
                             padding: '1rem 0 1rem 0'
                         }}
                     >
-                        <Box sx={{ minWidth: '83px', margin: '0 1rem 0 1rem', display: 'flex', justifyContent: 'center' }}>
+                        <Box sx={{ minWidth: '83px', margin: '0 1rem 0 1rem', display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center' }}>
+                        <Typography variant="subtitle1" sx={{ color: 'primary.main'}}>LinkedIn</Typography>
                             <Link href="https://www.linkedin.com/in/tony-migeon-1303b1222/">
                                 <a>
                                     <SiLinkedin size={30} color="#104d2b" />
                                 </a>
                             </Link>
                         </Box>
-                        <Box sx={{ minWidth: '83px', margin: '0 1rem 0 1rem', display: 'flex', justifyContent: 'center' }}>
+                        <Box sx={{ minWidth: '83px', margin: '0 1rem 0 1rem', display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center' }}>
+                        <Typography variant="subtitle1" sx={{ color: 'primary.main'}}>Github</Typography>
                             <Link href="https://github.com/Rhyyn">
                                 <a>
                                     <SiGithub size={30} color="#104d2b" />
