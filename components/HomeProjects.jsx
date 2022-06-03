@@ -53,12 +53,18 @@ const HomeProjects = () => {
             {
                 name: "Harry Potter Character Displayer",
                 image: "/HpDisplayer.png",
-                description: "Web App that pulls data from a public API then displays it, search by Name, Houses and more"
+                description:
+                    "Web App that pulls data from a public API then displays it, search by Name, Houses and more",
+                repo: "https://github.com/Rhyyn/Harry-potter-character-displayer",
+                demo: "http://harry-potter-character-displayer.vercel.app/"
             },
             {
                 name: "Lost Ark Wandering Merchant Timer",
                 image: "/LostArkTracker.png",
-                description: "Web App made to track Wandering Merchants timers in the game Lost Ark, avalaible for all Servers"
+                description:
+                    "Web App made to track Wandering Merchants timers in the game Lost Ark, avalaible for all Servers",
+                repo: "https://github.com/Rhyyn/Rhyn-Lost-Ark-Wandering-Merchant_Tracker",
+                demo: "https://lostark-merchant-tracker.netlify.app/"
             },
         ],
     };
@@ -81,7 +87,7 @@ const HomeProjects = () => {
             maxWidth: "25rem",
             margin: "0 auto",
             marginBottom: "2rem",
-            paddingTop: '2rem'
+            paddingTop: "2rem",
         },
     }));
     const HomeSkillsMobileDiv = styled("div")(({ theme }) => ({
@@ -92,7 +98,7 @@ const HomeProjects = () => {
             maxWidth: "20rem",
             margin: "0 auto",
             marginBottom: "2rem",
-            paddingTop: '2rem'
+            paddingTop: "2rem",
         },
         [theme.breakpoints.up("tablet")]: {
             display: "none",
@@ -100,14 +106,19 @@ const HomeProjects = () => {
     }));
 
     const HomeProjectDiv = styled("div")(({ theme }) => ({
-        display: "flex",
-        flexWrap: "wrap",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: 'center',
-        maxWidth: "90vw",
-        margin: "0 auto",
-        marginBottom: "2rem",
+        [theme.breakpoints.up("mobile")]: {
+            display: "flex",
+            flexWrap: "wrap",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            maxWidth: "90vw",
+            margin: "0 auto",
+        },
+        [theme.breakpoints.up("tablet")]: {
+            flexDirection: "row",
+            maxWidth: "70vw",
+        },
     }));
     return (
         <HomeProjectsSection>
@@ -161,8 +172,8 @@ const HomeProjects = () => {
                     );
                 })}
             </HomeSkillsMobileDiv>
+            <Typography variant="h5" sx={{textAlign: 'center', color: 'primary.main', fontWeight: '600'}}>My Projects</Typography>
             <HomeProjectDiv>
-                <Typography variant="h5">My Projects</Typography>
                 {Projects.projects.map((project, index) => {
                     return (
                         <MyCard
@@ -170,6 +181,8 @@ const HomeProjects = () => {
                             name={project.name}
                             image={project.image}
                             desc={project.description}
+                            repo={project.repo}
+                            demo={project.demo}
                         ></MyCard>
                     );
                 })}
