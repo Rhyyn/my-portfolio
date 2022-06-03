@@ -11,8 +11,6 @@ import {
     SiReact,
 } from "react-icons/si";
 import MyCard from "./Card";
-// import HpDisplayer from "../public/HpDisplayer.png";
-// import loatracker from "../public/loatracker.png";
 
 const HomeProjects = () => {
     const advancedSkills = {
@@ -83,6 +81,7 @@ const HomeProjects = () => {
             maxWidth: "25rem",
             margin: "0 auto",
             marginBottom: "2rem",
+            paddingTop: '2rem'
         },
     }));
     const HomeSkillsMobileDiv = styled("div")(({ theme }) => ({
@@ -93,6 +92,7 @@ const HomeProjects = () => {
             maxWidth: "20rem",
             margin: "0 auto",
             marginBottom: "2rem",
+            paddingTop: '2rem'
         },
         [theme.breakpoints.up("tablet")]: {
             display: "none",
