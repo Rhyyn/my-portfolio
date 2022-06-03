@@ -50,6 +50,7 @@ const HomeMain = () => {
             "linear-gradient(180deg, rgba(43,204,115,1) 0%, rgba(108,213,155,1) 100%)",
         display: "flex",
         justifyContent: "center",
+        minHeight: "380px",
         [theme.breakpoints.up("mobile")]: {
             height: "40%",
             display: "flex",
@@ -72,6 +73,27 @@ const HomeMain = () => {
         marginBottom: "1rem",
     }));
 
+    const SvgTrees = styled("div")(({ theme }) => ({
+        [theme.breakpoints.up("mobile")]: {
+            maxWidth: "50px",
+            position: "relative",
+            top: "393px",
+            left: "10px",
+        },
+        [theme.breakpoints.up("tablet")]: {
+            maxWidth: "50px",
+            position: "relative",
+            top: "393px",
+            left: "70px",
+        },
+        [theme.breakpoints.up("desktop")]: {
+            maxWidth: "50px",
+            position: "relative",
+            top: "393px",
+            left: "8%",
+        },
+    }));
+
     const router = useRouter();
     const { locale, locales, defaultLocale, asPath } = useRouter();
     const { greeting, intro, name, job, library, projects, aboutme, contact } =
@@ -80,11 +102,21 @@ const HomeMain = () => {
     return (
         <HomeIntroSection>
             <HomeGreetingDiv>
+                <SvgTrees>
+                    <img
+                        width="100%"
+                        src="/pine-tree.svg"
+                        className="pineTree"
+                    />
+                </SvgTrees>
+
                 <Box
                     sx={{
                         display: "flex",
-                        flexDirection: "row",
+                        flexDirection: "column",
                         justifyContent: "center",
+                        alignItems: "center",
+                        minHeight: "380px",
                     }}
                 >
                     <Typography // gretting text
@@ -113,14 +145,6 @@ const HomeMain = () => {
                             {intro}
                         </Typography>
                     </Box>
-                </Box>
-                <Box
-                    sx={{
-                        display: "flex",
-                        flexDirection: "column",
-                        alignItems: "center",
-                    }}
-                >
                     <Typography // job text
                         variant="h2"
                         sx={{
