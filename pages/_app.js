@@ -34,6 +34,18 @@ function MyApp({ Component, pageProps }) {
                 desktop: 1200,
             },
         },
+        components: {
+            MuiButton: {
+                styleOverrides: {
+                    root: ({ ownerState }) => ({
+                        "&:hover": {
+                            backgroundColor: '#104d2b',
+                            color: '#fff'
+                        },
+                    }),
+                },
+            },
+        },
     });
     return (
         <ThemeProvider theme={theme}>
