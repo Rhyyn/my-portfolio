@@ -22,10 +22,10 @@ const HomeMain = () => {
         },
         fr: {
             greeting: "Bonjour",
-            intro: "Moi c'est",
+            intro: "Moi c'est Tony Migeon",
             name: "Tony Migeon",
             job: "Développeur Front End",
-            library: "React",
+            library: "Ma Librairie principale est React, je suis actuellement en recherche d'offres en télétravail.",
             projects: "Projets",
             aboutme: "Profil",
             contact: "Contact",
