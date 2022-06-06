@@ -25,7 +25,8 @@ const HomeMain = () => {
             intro: "Moi c'est Tony Migeon",
             name: "Tony Migeon",
             job: "Développeur Front End",
-            library: "Ma Librairie principale est React, je suis actuellement en recherche d'offres en télétravail.",
+            library:
+                "Ma Librairie principale est React, je suis actuellement en recherche d'offres en télétravail.",
             projects: "Projets",
             aboutme: "Profil",
             contact: "Contact",
@@ -126,8 +127,7 @@ const HomeMain = () => {
                             color: { mobile: "primary.contrastText" },
                             fontSize: { mobile: "2.3rem", tablet: "3rem" },
                             verticalAlign: "middle",
-                            textShadow:
-                                    "2px 2px 2px rgba(16,77,43,0.55)",
+                            textShadow: "2px 2px 2px rgba(16,77,43,0.55)",
                         }}
                     >
                         {greeting}
@@ -142,8 +142,7 @@ const HomeMain = () => {
                                 paddingLeft: "1rem",
                                 // textShadow:
                                 //     "1px 1px 2px rgba(150, 150, 150, 1)",
-                                textShadow:
-                                    "2px 2px 2px rgba(16,77,43,0.55)",
+                                textShadow: "2px 2px 2px rgba(16,77,43,0.55)",
                                 //text-shadow: 6px 5px 6px #104D2B;
                             }}
                         >
@@ -171,8 +170,7 @@ const HomeMain = () => {
                             maxWidth: "20rem",
                             textAlign: "center",
                             // textShadow: "1px 1px 2px rgba(150, 150, 150, 1)",
-                            textShadow:
-                                    "2px 2px 2px rgba(16,77,43,0.55)",
+                            textShadow: "2px 2px 2px rgba(16,77,43,0.55)",
                         }}
                     >
                         {library}
@@ -250,32 +248,36 @@ const HomeMain = () => {
                         </Box>
                     </Box>
                     <HomeButtonDiv>
-                        <Button // project redirect button
-                            sx={{
-                                backgroundColor: "secondary.main",
-                                color: "secondary.contrastText",
-                                margin: "0 1rem 0 1rem",
-                                height: "30px",
-                                fontSize: "0.8rem",
-                                fontWeight: "600",
-                                minWidth: "83px",
-                            }}
-                        >
-                            {contact}
-                        </Button>
-                        <Button // project redirect button
-                            sx={{
-                                backgroundColor: "secondary.main",
-                                color: "secondary.contrastText",
-                                margin: "0 1rem 0 1rem",
-                                height: "30px",
-                                fontSize: "0.8rem",
-                                fontWeight: "600",
-                                minWidth: "83px",
-                            }}
-                        >
-                            {aboutme}
-                        </Button>
+                        <Link href="/contact">
+                            <Button // project redirect button
+                                sx={{
+                                    backgroundColor: "secondary.main",
+                                    color: "secondary.contrastText",
+                                    margin: "0 1rem 0 1rem",
+                                    height: "30px",
+                                    fontSize: "0.8rem",
+                                    fontWeight: "600",
+                                    minWidth: "83px",
+                                }}
+                            >
+                                {contact}
+                            </Button>
+                        </Link>
+                        <Link href="/contact">
+                            <Button // project redirect button
+                                sx={{
+                                    backgroundColor: "secondary.main",
+                                    color: "secondary.contrastText",
+                                    margin: "0 1rem 0 1rem",
+                                    height: "30px",
+                                    fontSize: "0.8rem",
+                                    fontWeight: "600",
+                                    minWidth: "83px",
+                                }}
+                            >
+                                {aboutme}
+                            </Button>
+                        </Link>
                     </HomeButtonDiv>
                 </Box>
             </HomeGreetingDiv>
