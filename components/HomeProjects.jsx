@@ -62,7 +62,7 @@ const HomeProjects = () => {
                 name: "Lost Ark Wandering Merchant Timer",
                 image: "/LostArkTracker.png",
                 description:
-                    "Web App made to track Wandering Merchants timers in the game Lost Ark, avalaible for all Servers",
+                    "Web App made to track Wandering Merchants timers in the game Lost Ark, available for all Servers",
                 repo: "https://github.com/Rhyyn/Rhyn-Lost-Ark-Wandering-Merchant_Tracker",
                 demo: "https://lostark-merchant-tracker.netlify.app/"
             },

@@ -74,6 +74,7 @@ const HomeMain = () => {
     }));
 
     const SvgTrees = styled("div")(({ theme }) => ({
+        // styling of background SVG trees
         [theme.breakpoints.up("mobile")]: {
             maxWidth: "50px",
             position: "relative",
@@ -125,7 +126,8 @@ const HomeMain = () => {
                             color: { mobile: "primary.contrastText" },
                             fontSize: { mobile: "2.3rem", tablet: "3rem" },
                             verticalAlign: "middle",
-                            textShadow: "1px 1px 2px rgba(150, 150, 150, 1)",
+                            textShadow:
+                                    "2px 2px 2px rgba(16,77,43,0.55)",
                         }}
                     >
                         {greeting}
@@ -138,8 +140,11 @@ const HomeMain = () => {
                                 fontSize: { mobile: "1.5rem", tablet: "2rem" },
                                 paddingTop: { mobile: "11px", tablet: "14px" },
                                 paddingLeft: "1rem",
+                                // textShadow:
+                                //     "1px 1px 2px rgba(150, 150, 150, 1)",
                                 textShadow:
-                                    "1px 1px 2px rgba(150, 150, 150, 1)",
+                                    "2px 2px 2px rgba(16,77,43,0.55)",
+                                //text-shadow: 6px 5px 6px #104D2B;
                             }}
                         >
                             {intro}
@@ -165,7 +170,9 @@ const HomeMain = () => {
                             color: "primary.contrastText",
                             maxWidth: "20rem",
                             textAlign: "center",
-                            textShadow: "1px 1px 2px rgba(150, 150, 150, 1)",
+                            // textShadow: "1px 1px 2px rgba(150, 150, 150, 1)",
+                            textShadow:
+                                    "2px 2px 2px rgba(16,77,43,0.55)",
                         }}
                     >
                         {library}
