@@ -9,10 +9,6 @@ import HomeProjects from "../components/HomeProjects";
 
 export default function Home() {
 
-    const handleClick = (e) => {
-        e.preventDefault();
-        router.push("/projects");
-    };
 
     return (
         <Box sx={{backgroundColor: '#e9e9e9', minHeight: '100vh'}}>
@@ -27,18 +23,7 @@ export default function Home() {
             <Header></Header>
             <HomeMain></HomeMain>
             <HomeProjects></HomeProjects>
-            {/* <Footer></Footer> */}
         </Box>
     );
 }
 
-{
-    /* <section className={homeStyles.ProjectsSection}>
-<main>
-
-</main>
-</section>
-<section className="aboutContactSection">
-<main></main>
-</section> */
-}
