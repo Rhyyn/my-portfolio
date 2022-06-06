@@ -42,7 +42,7 @@ const NavBar = () => {
             }}
         >
             <Container sx={{ width: "90vw", height: '60px' }}>
-                <Toolbar disableGutters sx={{minHeight: '60px'}}>
+                <Toolbar disableGutters sx={{minHeight: '60px', width: { mobile: "90%", tablet: '60%'}, margin: '0 auto'}}>
                     <Box
                         sx={{
                             flexGrow: 1,
@@ -73,7 +73,7 @@ const NavBar = () => {
                             open={Boolean(anchorElNav)}
                             onClose={handleCloseNavMenu}
                             sx={{
-                                display: { xs: "block", md: "none" },
+                                display: { xs: "block", md: "none"},
                             }}
                         >
                             {locale === "en"
