@@ -34,6 +34,7 @@ const NavBar = () => {
 
     return (
         <AppBar
+            elevation={0}
             sx={{
                 maxWidth: "90vw",
                 backgroundColor: "#fff",

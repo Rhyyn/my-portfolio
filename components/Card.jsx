@@ -1,4 +1,4 @@
-import {React, useState} from "react";
+import { React, useState } from "react";
 import Link from "next/link";
 import {
     Button,
@@ -8,53 +8,80 @@ import {
     CardHeader,
     CardMedia,
     Typography,
+    Box,
 } from "@mui/material";
 import { SiGithub } from "react-icons/si";
 
 const MyCard = (props) => {
-    const [hoverColor, setHoverColor] = useState("#cc2b84")
     return (
         <Card
             sx={{
                 maxWidth: "300px",
                 margin: "1rem",
                 textAlign: "center",
-                color: "primary.main",
+                color: "secondary.main",
                 maxHeight: "660px",
             }}
         >
-            <CardHeader title={props.name}></CardHeader>
+            <CardHeader
+                titleTypographyProps={{
+                    fontSize: 18,
+                }}
+                sx={{ padding: "0.5rem" }}
+                title={props.name}
+            ></CardHeader>
             <CardMedia
                 component="img"
-                height="398px"
+                maxHeight="398px"
                 image={props.image}
             ></CardMedia>
             <CardContent>
                 <Typography variant="subtitle2">{props.desc}</Typography>
             </CardContent>
 
-            <Link href={props.repo}>
-                <a target="_blank">
-                    <SiGithub
-                        size={20}
-                        onMouseEnter={() => setHoverColor("#104d2b")}
-                        onMouseLeave={() => setHoverColor("#cc2b84")}
-                        color={hoverColor}
-                    />
-                </a>
-            </Link>
+            <Box
+                sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                }}
+            >
+                <Link href={props.repo}>
+                    <a target="_blank">
+                        <SiGithub color="#45c14e" size={20} />
+                    </a>
+                </Link>
+                <Link href={props.repo}>
+                    <a target="_blank">
+                        <Typography variant="subtitle2">View Code</Typography>
+                    </a>
+                </Link>
+            </Box>
             <CardActions
                 sx={{ display: "flex", justifyContent: "space-evenly" }}
             >
                 <Button
                     size="small"
-                    sx={{ color: "secondary.main" }}
+                    sx={{
+                        color: "primary.contrastText",
+                        backgroundColor: "primary.main",
+                        borderRadius: "15px",
+                        width: "120px",
+                    }}
                     href={props.demo}
                     target="_blank"
                 >
                     Live Demo
                 </Button>
-                <Button size="small" sx={{ color: "secondary.main" }}>
+                <Button
+                    size="small"
+                    sx={{
+                        color: "primary.contrastText",
+                        backgroundColor: "primary.main",
+                        borderRadius: "15px",
+                        width: "120px",
+                    }}
+                >
                     Learn More
                 </Button>
             </CardActions>

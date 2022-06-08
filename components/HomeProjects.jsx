@@ -1,52 +1,10 @@
 import React from "react";
 import { styled } from "@mui/system";
 import { Box, Typography } from "@mui/material";
-import {
-    SiTypescript,
-    SiJavascript,
-    SiHtml5,
-    SiCss3,
-    SiMaterialui,
-    SiNextdotjs,
-    SiReact,
-} from "react-icons/si";
 import MyCard from "./Card";
 
 const HomeProjects = () => {
-    const advancedSkills = {
-        skills: [
-            {
-                name: "TypeScript",
-                icon: <SiTypescript size={30} color="#104d2b" />,
-                mobileIcon: <SiTypescript size={20} color="#104d2b" />,
-            },
-            {
-                name: "Javascript",
-                icon: <SiJavascript size={30} color="#104d2b" />,
-                mobileIcon: <SiJavascript size={20} color="#104d2b" />,
-            },
-            {
-                name: "React",
-                icon: <SiReact size={30} color="#104d2b" />,
-                mobileIcon: <SiReact size={20} color="#104d2b" />,
-            },
-            {
-                name: "CSS3",
-                icon: <SiCss3 size={30} color="#104d2b" />,
-                mobileIcon: <SiCss3 size={20} color="#104d2b" />,
-            },
-            {
-                name: "MaterialUI",
-                icon: <SiMaterialui size={30} color="#104d2b" />,
-                mobileIcon: <SiMaterialui size={20} color="#104d2b" />,
-            },
-            {
-                name: "NextJs",
-                icon: <SiNextdotjs size={30} color="#104d2b" />,
-                mobileIcon: <SiNextdotjs size={20} color="#104d2b" />,
-            },
-        ],
-    };
+    
 
     const Projects = {
         projects: [
@@ -73,37 +31,11 @@ const HomeProjects = () => {
         width: "90vw",
         margin: "0 auto",
         height: "100%",
-        boxShadow: theme.shadows[24],
+        backgroundColor: '#dff8eb',
+        boxShadow: "0px 17px 6px -3px rgba(0,0,0,0.2),0px 17px 14px 1px rgba(0,0,0,0.14),0px 17px 18px 3px rgba(0,0,0,0.12)", // 17px = y 
     }));
 
-    const HomeSkillsDiv = styled("div")(({ theme }) => ({
-        [theme.breakpoints.up("mobile")]: {
-            display: "none",
-        },
-        [theme.breakpoints.up("tablet")]: {
-            display: "flex",
-            flexWrap: "wrap",
-            justifyContent: "center",
-            maxWidth: "25rem",
-            margin: "0 auto",
-            marginBottom: "2rem",
-            paddingTop: "2rem",
-        },
-    }));
-    const HomeSkillsMobileDiv = styled("div")(({ theme }) => ({
-        [theme.breakpoints.up("mobile")]: {
-            display: "flex",
-            flexWrap: "wrap",
-            justifyContent: "center",
-            maxWidth: "20rem",
-            margin: "0 auto",
-            marginBottom: "2rem",
-            paddingTop: "2rem",
-        },
-        [theme.breakpoints.up("tablet")]: {
-            display: "none",
-        },
-    }));
+    
 
     const HomeProjectDiv = styled("div")(({ theme }) => ({
         [theme.breakpoints.up("mobile")]: {
@@ -122,57 +54,7 @@ const HomeProjects = () => {
     }));
     return (
         <HomeProjectsSection>
-            <HomeSkillsDiv>
-                {advancedSkills.skills.map((skill, index) => {
-                    // div for skills displays
-                    return (
-                        <Box
-                            key={index}
-                            sx={{
-                                padding: "0 0.5rem",
-                                textAlign: "center",
-                                minWidth: "94px",
-                            }}
-                        >
-                            <Typography
-                                sx={{
-                                    color: "primary.main",
-                                    fontWeight: "500",
-                                }}
-                            >
-                                {skill.name}
-                            </Typography>
-                            {skill.icon}
-                        </Box>
-                    );
-                })}
-            </HomeSkillsDiv>
-            <HomeSkillsMobileDiv>
-                {advancedSkills.skills.map((skill, index) => {
-                    // div for skills displays
-                    return (
-                        <Box
-                            key={index}
-                            sx={{
-                                textAlign: "center",
-                                minWidth: "94px",
-                            }}
-                        >
-                            <Typography
-                                sx={{
-                                    color: "primary.main",
-                                    fontWeight: "500",
-                                    fontSize: "0.8rem",
-                                }}
-                            >
-                                {skill.name}
-                            </Typography>
-                            {skill.mobileIcon}
-                        </Box>
-                    );
-                })}
-            </HomeSkillsMobileDiv>
-            <Typography variant="h5" sx={{textAlign: 'center', color: 'primary.main', fontWeight: '600'}}>My Projects</Typography>
+            <Typography variant="h5" sx={{textAlign: 'center', color: 'secondary.main', fontWeight: '700', fontSize: '2rem'}}>My Projects</Typography>
             <HomeProjectDiv>
                 {Projects.projects.map((project, index) => {
                     return (

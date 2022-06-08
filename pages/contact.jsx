@@ -10,7 +10,7 @@ const contact = () => {
         width: "90vw",
         margin: "0 auto",
         height: "calc(100vh - 60px)",
-        boxShadow: theme.shadows[24],
+        // boxShadow: theme.shadows[24],
         backgroundColor: 'primary.main',
         display: "flex",
         alignItems: "center",

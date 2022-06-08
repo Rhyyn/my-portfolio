@@ -3,7 +3,17 @@ import Link from "next/link";
 import { styled, shadows } from "@mui/system";
 import { useRouter } from "next/router";
 import { Typography, Box, Button } from "@mui/material";
-import { SiGithub, SiLinkedin } from "react-icons/si";
+import {
+    SiTypescript,
+    SiJavascript,
+    SiHtml5,
+    SiCss3,
+    SiMaterialui,
+    SiNextdotjs,
+    SiReact,
+    SiGithub,
+    SiLinkedin,
+} from "react-icons/si";
 
 const HomeMain = () => {
     const [hoverColorLink, setHoverColorLink] = useState("#104d2b");
@@ -13,7 +23,7 @@ const HomeMain = () => {
             greeting: "Hello,", // h1
             intro: "I'm Tony Migeon", // h3
             name: "Tony Migeon", // h3 + bold
-            job: "I'm a Front End Developer", // h1
+            job: "A Front End Developer", // h1
             library:
                 "Currently using React as my main library, I'm looking for Remote Job Opportunities.", // h1 + more weigth
             projects: "Projects",
@@ -32,23 +42,89 @@ const HomeMain = () => {
             contact: "Contact",
         },
     };
+    const advancedSkills = {
+        skills: [
+            {
+                name: "TypeScript",
+                icon: <SiTypescript size={30} color="#104d2b" />,
+                mobileIcon: <SiTypescript size={20} color="#104d2b" />,
+            },
+            {
+                name: "Javascript",
+                icon: <SiJavascript size={30} color="#104d2b" />,
+                mobileIcon: <SiJavascript size={20} color="#104d2b" />,
+            },
+            {
+                name: "React",
+                icon: <SiReact size={30} color="#104d2b" />,
+                mobileIcon: <SiReact size={20} color="#104d2b" />,
+            },
+            {
+                name: "CSS3",
+                icon: <SiCss3 size={30} color="#104d2b" />,
+                mobileIcon: <SiCss3 size={20} color="#104d2b" />,
+            },
+            {
+                name: "MaterialUI",
+                icon: <SiMaterialui size={30} color="#104d2b" />,
+                mobileIcon: <SiMaterialui size={20} color="#104d2b" />,
+            },
+            {
+                name: "NextJs",
+                icon: <SiNextdotjs size={30} color="#104d2b" />,
+                mobileIcon: <SiNextdotjs size={20} color="#104d2b" />,
+            },
+        ],
+    };
 
     const HomeIntroSection = styled("section")(({ theme }) => ({
         width: "90vw",
         margin: "0 auto",
         height: "100%",
-        boxShadow: theme.shadows[24],
+        backgroundColor: "#fff",
+        boxShadow: theme.shadows[10],
         // background: `url(/wavyBackground.png)`,
         // backgroundRepeat: "no-repeat",
         // backgroundSize: "cover",
         // backgroundPosition: "75%",
     }));
 
+    const HomeSkillsDiv = styled("div")(({ theme }) => ({
+        [theme.breakpoints.up("mobile")]: {
+            display: "none",
+        },
+        [theme.breakpoints.up("tablet")]: {
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "center",
+            maxWidth: "25rem",
+            margin: "0 auto",
+            marginBottom: "2rem",
+        },
+    }));
+    const HomeSkillsMobileDiv = styled("div")(({ theme }) => ({
+        [theme.breakpoints.up("mobile")]: {
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "center",
+            maxWidth: "20rem",
+            margin: "0 auto",
+            marginBottom: "2rem",
+            paddingTop: "2rem",
+        },
+        [theme.breakpoints.up("tablet")]: {
+            display: "none",
+        },
+    }));
+
     const HomeGreetingDiv = styled("div")(({ theme }) => ({
-        boxShadow: theme.shadows[6],
-        background: "rgb(43,204,115)",
-        background:
-            "linear-gradient(180deg, rgba(43,204,115,1) 0%, rgba(108,213,155,1) 100%)",
+        // boxShadow: theme.shadows[6],
+        // background: "rgb(43,204,115)",
+        // background:
+        //     "linear-gradient(180deg, rgba(43,204,115,1) 0%, rgba(108,213,155,1) 100%)",
+        backgroundImage: "url(backgroundClouds02.svg)",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
         display: "flex",
         justifyContent: "center",
         minHeight: "380px",
@@ -72,6 +148,7 @@ const HomeMain = () => {
         display: "flex",
         justifyContent: "center",
         marginBottom: "1rem",
+        marginTop: "2rem",
     }));
 
     const SvgTrees = styled("div")(({ theme }) => ({
@@ -104,13 +181,13 @@ const HomeMain = () => {
     return (
         <HomeIntroSection>
             <HomeGreetingDiv>
-                <SvgTrees>
+                {/* <SvgTrees>
                     <img
                         width="100%"
                         src="/pine-tree.svg"
                         className="pineTree"
                     />
-                </SvgTrees>
+                </SvgTrees> */}
 
                 <Box
                     sx={{
@@ -122,41 +199,35 @@ const HomeMain = () => {
                     }}
                 >
                     <Typography // gretting text
-                        variant="h1"
+                        variant="h4"
                         sx={{
-                            color: { mobile: "primary.contrastText" },
+                            color: { mobile: "secondary.main" },
                             fontSize: { mobile: "2.3rem", tablet: "3rem" },
                             verticalAlign: "middle",
-                            textShadow: "2px 2px 2px rgba(16,77,43,0.55)",
+                            fontWeight: "600",
                         }}
                     >
                         {greeting}
                     </Typography>
-                    <Box sx={{}}>
-                        <Typography // intro text
-                            variant="h4"
-                            sx={{
-                                color: "primary.contrastText",
-                                fontSize: { mobile: "1.5rem", tablet: "2rem" },
-                                paddingTop: { mobile: "11px", tablet: "14px" },
-                                paddingLeft: "1rem",
-                                // textShadow:
-                                //     "1px 1px 2px rgba(150, 150, 150, 1)",
-                                textShadow: "2px 2px 2px rgba(16,77,43,0.55)",
-                                //text-shadow: 6px 5px 6px #104D2B;
-                            }}
-                        >
-                            {intro}
-                        </Typography>
-                    </Box>
-                    <Typography // job text
-                        variant="h2"
+                    <Typography // intro text
+                        variant="h4"
                         sx={{
-                            color: "primary.main",
+                            color: "secondary.main",
+                            fontSize: { mobile: "1.5rem", tablet: "2rem" },
+                            fontWeight: "600",
+                            paddingBottom: "0.5rem",
+                        }}
+                    >
+                        {intro}
+                    </Typography>
+                    <Typography // job text
+                        variant="h4"
+                        sx={{
+                            color: "secondary.main",
                             fontWeight: "500",
                             fontSize: { mobile: "1.5rem", tablet: "2rem" },
                             marginBottom: "1rem",
-                            marginTop: "0.7rem",
+                            fontWeight: "700",
                         }}
                     >
                         {job}
@@ -166,16 +237,14 @@ const HomeMain = () => {
                         sx={{
                             fontWeight: "600",
                             fontSize: { mobile: "0.9rem" },
-                            color: "primary.contrastText",
+                            color: "secondary.main",
                             maxWidth: "20rem",
                             textAlign: "center",
-                            // textShadow: "1px 1px 2px rgba(150, 150, 150, 1)",
-                            textShadow: "2px 2px 2px rgba(16,77,43,0.55)",
                         }}
                     >
                         {library}
                     </Typography>
-                    <Box
+                    {/* <Box
                         sx={{
                             display: "flex",
                             flexDirection: "row",
@@ -196,7 +265,7 @@ const HomeMain = () => {
                         >
                             <Typography
                                 variant="subtitle1"
-                                sx={{ color: "primary.main" }}
+                                sx={{ color: "secondary.main" }}
                             >
                                 LinkedIn
                             </Typography>
@@ -204,13 +273,14 @@ const HomeMain = () => {
                                 <a target="_blank">
                                     <SiLinkedin
                                         size={30}
-                                        onMouseEnter={() =>
-                                            setHoverColorLink("#cc2b84")
-                                        }
-                                        onMouseLeave={() =>
-                                            setHoverColorLink("#104d2b")
-                                        }
-                                        color={hoverColorLink}
+                                        // onMouseEnter={() =>
+                                        //     setHoverColorLink("#cc2b84")
+                                        // }
+                                        // onMouseLeave={() =>
+                                        //     setHoverColorLink("#104d2b")
+                                        // }
+                                        // color={hoverColorLink}
+                                        color="#104d2b"
                                     />
                                 </a>
                             </Link>
@@ -227,7 +297,7 @@ const HomeMain = () => {
                         >
                             <Typography
                                 variant="subtitle1"
-                                sx={{ color: "primary.main" }}
+                                sx={{ color: "secondary.main" }}
                             >
                                 Github
                             </Typography>
@@ -235,29 +305,31 @@ const HomeMain = () => {
                                 <a target="_blank">
                                     <SiGithub
                                         size={30}
-                                        onMouseEnter={() =>
-                                            setHoverColorGit("#cc2b84")
-                                        }
-                                        onMouseLeave={() =>
-                                            setHoverColorGit("#104d2b")
-                                        }
-                                        color={hoverColorGit}
+                                        // onMouseEnter={() =>
+                                        //     setHoverColorGit("#cc2b84")
+                                        // }
+                                        // onMouseLeave={() =>
+                                        //     setHoverColorGit("#104d2b")
+                                        // }
+                                        // color={hoverColorGit}
+                                        color="#104d2b"
                                     />
                                 </a>
                             </Link>
                         </Box>
-                    </Box>
+                    </Box> */}
                     <HomeButtonDiv>
                         <Link href="/contact">
                             <Button // project redirect button
                                 sx={{
-                                    backgroundColor: "secondary.main",
-                                    color: "secondary.contrastText",
+                                    backgroundColor: "primary.main",
+                                    color: "primary.contrastText",
                                     margin: "0 1rem 0 1rem",
-                                    height: "30px",
+                                    height: "40px",
                                     fontSize: "0.8rem",
                                     fontWeight: "600",
-                                    minWidth: "83px",
+                                    minWidth: "113px",
+                                    borderRadius: "20px",
                                 }}
                             >
                                 {contact}
@@ -266,19 +338,70 @@ const HomeMain = () => {
                         <Link href="/contact">
                             <Button // project redirect button
                                 sx={{
-                                    backgroundColor: "secondary.main",
-                                    color: "secondary.contrastText",
+                                    backgroundColor: "primary.main",
+                                    color: "primary.contrastText",
                                     margin: "0 1rem 0 1rem",
-                                    height: "30px",
+                                    height: "40px",
                                     fontSize: "0.8rem",
                                     fontWeight: "600",
-                                    minWidth: "83px",
+                                    minWidth: "113px",
+                                    borderRadius: "20px",
                                 }}
                             >
                                 {aboutme}
                             </Button>
                         </Link>
                     </HomeButtonDiv>
+                    <HomeSkillsDiv>
+                        {advancedSkills.skills.map((skill, index) => {
+                            // div for skills displays
+                            return (
+                                <Box
+                                    key={index}
+                                    sx={{
+                                        padding: "0 0.5rem",
+                                        textAlign: "center",
+                                        minWidth: "94px",
+                                    }}
+                                >
+                                    <Typography
+                                        sx={{
+                                            color: "secondary.main",
+                                            fontWeight: "500",
+                                        }}
+                                    >
+                                        {skill.name}
+                                    </Typography>
+                                    {skill.icon}
+                                </Box>
+                            );
+                        })}
+                    </HomeSkillsDiv>
+                    <HomeSkillsMobileDiv>
+                        {advancedSkills.skills.map((skill, index) => {
+                            // div for skills displays
+                            return (
+                                <Box
+                                    key={index}
+                                    sx={{
+                                        textAlign: "center",
+                                        minWidth: "94px",
+                                    }}
+                                >
+                                    <Typography
+                                        sx={{
+                                            color: "secondary.main",
+                                            fontWeight: "500",
+                                            fontSize: "0.8rem",
+                                        }}
+                                    >
+                                        {skill.name}
+                                    </Typography>
+                                    {skill.mobileIcon}
+                                </Box>
+                            );
+                        })}
+                    </HomeSkillsMobileDiv>
                 </Box>
             </HomeGreetingDiv>
         </HomeIntroSection>
