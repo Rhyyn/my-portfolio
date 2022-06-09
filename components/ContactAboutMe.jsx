@@ -1,6 +1,7 @@
-import { Typography, styled, Box } from "@mui/material";
+import { Typography, styled, Box, Button } from "@mui/material";
 import { maxWidth } from "@mui/system";
 import React from "react";
+import { BsClipboardPlus } from "react-icons/bs";
 
 const ContactAboutMe = () => {
     const MyContactSection = styled("section")(({ theme }) => ({
@@ -17,7 +18,15 @@ const ContactAboutMe = () => {
     }));
     return (
         <MyContactSection>
-            <Box sx={{ minWidth: "50%", padding: "1rem" }}>
+            <Box
+                sx={{
+                    minWidth: "50%",
+                    padding: "1rem",
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                }}
+            >
                 <Typography
                     variant="h3"
                     sx={{
@@ -29,6 +38,16 @@ const ContactAboutMe = () => {
                 >
                     Contact
                 </Typography>
+                <Box sx={{ display: "flex", padding: "1rem" }}>
+                    <Typography
+                        sx={{ backgroundColor: "#e9e9e9", padding: "0.5rem" }}
+                    >
+                        tonymigeonpro@gmail.com
+                    </Typography>
+                    <Box sx={{ backgroundColor: "#e5e5e5", padding: "0.5rem" }}>
+                        <BsClipboardPlus color="#4ee8e2" size={24} />
+                    </Box>
+                </Box>
             </Box>
             <Box
                 sx={{
