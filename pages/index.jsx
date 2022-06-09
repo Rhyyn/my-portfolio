@@ -4,6 +4,7 @@ import { Box } from "@mui/material";
 import HomeMain from "../components/HomeMain";
 import Footer from "../components/Footer";
 import HomeProjects from "../components/HomeProjects";
+import ContactAboutMe from "../components/ContactAboutMe";
 
 
 
@@ -23,6 +24,7 @@ export default function Home() {
             <Header></Header>
             <HomeMain></HomeMain>
             <HomeProjects></HomeProjects>
+            <ContactAboutMe></ContactAboutMe>
         </Box>
     );
 }
