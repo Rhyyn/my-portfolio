@@ -15,6 +15,7 @@ import {
     SiLinkedin,
 } from "react-icons/si";
 
+
 const HomeMain = () => {
     const [hoverColorLink, setHoverColorLink] = useState("#104d2b");
     const [hoverColorGit, setHoverColorGit] = useState("#104d2b");
@@ -47,32 +48,32 @@ const HomeMain = () => {
             {
                 name: "TypeScript",
                 icon: <SiTypescript size={30} color="#104d2b" />,
-                mobileIcon: <SiTypescript size={20} color="#104d2b" />,
+                mobileIcon: <SiTypescript size={25} color="#104d2b" />,
             },
             {
                 name: "Javascript",
                 icon: <SiJavascript size={30} color="#104d2b" />,
-                mobileIcon: <SiJavascript size={20} color="#104d2b" />,
+                mobileIcon: <SiJavascript size={25} color="#104d2b" />,
             },
             {
                 name: "React",
                 icon: <SiReact size={30} color="#104d2b" />,
-                mobileIcon: <SiReact size={20} color="#104d2b" />,
+                mobileIcon: <SiReact size={25} color="#104d2b" />,
             },
             {
                 name: "CSS3",
                 icon: <SiCss3 size={30} color="#104d2b" />,
-                mobileIcon: <SiCss3 size={20} color="#104d2b" />,
+                mobileIcon: <SiCss3 size={25} color="#104d2b" />,
             },
             {
                 name: "MaterialUI",
                 icon: <SiMaterialui size={30} color="#104d2b" />,
-                mobileIcon: <SiMaterialui size={20} color="#104d2b" />,
+                mobileIcon: <SiMaterialui size={25} color="#104d2b" />,
             },
             {
                 name: "NextJs",
                 icon: <SiNextdotjs size={30} color="#104d2b" />,
-                mobileIcon: <SiNextdotjs size={20} color="#104d2b" />,
+                mobileIcon: <SiNextdotjs size={25} color="#104d2b" />,
             },
         ],
     };
@@ -80,7 +81,7 @@ const HomeMain = () => {
     const HomeIntroSection = styled("section")(({ theme }) => ({
         width: "90vw",
         margin: "0 auto",
-        height: "100%",
+        height: "80vh",
         backgroundColor: "#fff",
         boxShadow: theme.shadows[10],
         // background: `url(/wavyBackground.png)`,
@@ -127,14 +128,14 @@ const HomeMain = () => {
         backgroundSize: "cover",
         display: "flex",
         justifyContent: "center",
-        minHeight: "380px",
+        height: '100%',
         [theme.breakpoints.up("mobile")]: {
-            height: "40%",
+            // height: "40%",
             display: "flex",
             flexDirection: "column",
         },
         [theme.breakpoints.up("tablet")]: {
-            height: "40%",
+            // height: "40%",
             display: "flex",
             flexDirection: "column",
         },
@@ -147,8 +148,8 @@ const HomeMain = () => {
     const HomeButtonDiv = styled("div")(({ theme }) => ({
         display: "flex",
         justifyContent: "center",
-        marginBottom: "1rem",
-        marginTop: "2rem",
+        marginBottom: "2rem",
+        marginTop: "4rem",
     }));
 
     const SvgTrees = styled("div")(({ theme }) => ({
@@ -244,80 +245,6 @@ const HomeMain = () => {
                     >
                         {library}
                     </Typography>
-                    {/* <Box
-                        sx={{
-                            display: "flex",
-                            flexDirection: "row",
-                            minWidth: "230px",
-                            justifyContent: "center",
-                            padding: "1rem 0 1rem 0",
-                        }}
-                    >
-                        <Box
-                            sx={{
-                                minWidth: "83px",
-                                margin: "0 1rem 0 1rem",
-                                display: "flex",
-                                justifyContent: "center",
-                                flexDirection: "column",
-                                alignItems: "center",
-                            }}
-                        >
-                            <Typography
-                                variant="subtitle1"
-                                sx={{ color: "secondary.main" }}
-                            >
-                                LinkedIn
-                            </Typography>
-                            <Link href="https://www.linkedin.com/in/tony-migeon-1303b1222/">
-                                <a target="_blank">
-                                    <SiLinkedin
-                                        size={30}
-                                        // onMouseEnter={() =>
-                                        //     setHoverColorLink("#cc2b84")
-                                        // }
-                                        // onMouseLeave={() =>
-                                        //     setHoverColorLink("#104d2b")
-                                        // }
-                                        // color={hoverColorLink}
-                                        color="#104d2b"
-                                    />
-                                </a>
-                            </Link>
-                        </Box>
-                        <Box
-                            sx={{
-                                minWidth: "83px",
-                                margin: "0 1rem 0 1rem",
-                                display: "flex",
-                                justifyContent: "center",
-                                flexDirection: "column",
-                                alignItems: "center",
-                            }}
-                        >
-                            <Typography
-                                variant="subtitle1"
-                                sx={{ color: "secondary.main" }}
-                            >
-                                Github
-                            </Typography>
-                            <Link href="https://github.com/Rhyyn">
-                                <a target="_blank">
-                                    <SiGithub
-                                        size={30}
-                                        // onMouseEnter={() =>
-                                        //     setHoverColorGit("#cc2b84")
-                                        // }
-                                        // onMouseLeave={() =>
-                                        //     setHoverColorGit("#104d2b")
-                                        // }
-                                        // color={hoverColorGit}
-                                        color="#104d2b"
-                                    />
-                                </a>
-                            </Link>
-                        </Box>
-                    </Box> */}
                     <HomeButtonDiv>
                         <Link href="/contact">
                             <Button // project redirect button
@@ -386,13 +313,14 @@ const HomeMain = () => {
                                     sx={{
                                         textAlign: "center",
                                         minWidth: "94px",
+                                        padding: '0.2rem'
                                     }}
                                 >
                                     <Typography
                                         sx={{
                                             color: "secondary.main",
                                             fontWeight: "500",
-                                            fontSize: "0.8rem",
+                                            fontSize: "0.9rem",
                                         }}
                                     >
                                         {skill.name}
