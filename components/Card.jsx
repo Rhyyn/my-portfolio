@@ -32,8 +32,8 @@ const MyCard = (props) => {
             ></CardHeader>
             <CardMedia
                 component="img"
-                maxHeight="398px"
                 image={props.image}
+                sx={{maxHeight: "398px"}}
             ></CardMedia>
             <CardContent>
                 <Typography variant="subtitle2">{props.desc}</Typography>
