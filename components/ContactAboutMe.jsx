@@ -1,9 +1,18 @@
-import { Typography, styled, Box, Button } from "@mui/material";
+import {
+    Typography,
+    styled,
+    Box,
+    Button,
+    Paper,
+    TextField,
+} from "@mui/material";
 import { maxWidth } from "@mui/system";
-import React from "react";
+import { React, useState } from "react";
 import { BsClipboardPlus } from "react-icons/bs";
 
 const ContactAboutMe = () => {
+
+    const [mailText, setMailText] = useState("");
     const MyContactSection = styled("section")(({ theme }) => ({
         width: "90vw",
         margin: "0 auto",
@@ -18,7 +27,7 @@ const ContactAboutMe = () => {
     }));
     return (
         <MyContactSection>
-            <Box
+            <Box // Contact container
                 sx={{
                     minWidth: "50%",
                     padding: "1rem",
@@ -27,7 +36,7 @@ const ContactAboutMe = () => {
                     alignItems: "center",
                 }}
             >
-                <Typography
+                <Typography // contact H3 text
                     variant="h3"
                     sx={{
                         textAlign: "center",
@@ -48,8 +57,26 @@ const ContactAboutMe = () => {
                         <BsClipboardPlus color="#4ee8e2" size={24} />
                     </Box>
                 </Box>
+                <Paper>
+                    <TextField
+                        id="outlined-basic"
+                        label="Mail.."
+                        onChange={(e) => setMailText(e.target.value)}
+                        error={mailText.length <= 0}
+                        helperText="Mail is invalid"
+                    ></TextField>
+                    <TextField
+                        id="outlined-basic"
+                        label="Subject"
+                    ></TextField>
+                    <TextField
+                        id="outlined-basic"
+                        label="Content.."
+                    ></TextField>
+                </Paper>
+                <Box></Box>
             </Box>
-            <Box
+            <Box // about me container
                 sx={{
                     minWidth: "50%",
                     padding: "1rem",
@@ -58,7 +85,7 @@ const ContactAboutMe = () => {
                     alignItems: "center",
                 }}
             >
-                <Typography
+                <Typography // about me H3 text
                     variant="h3"
                     sx={{
                         textAlign: "center",
