@@ -2,9 +2,24 @@ import React from "react";
 import { styled } from "@mui/system";
 import { Box, Typography } from "@mui/material";
 import MyCard from "./Card";
+import { BsFileArrowDown } from "react-icons/bs";
+import { useEffect, useState } from "react";
 
 const HomeProjects = () => {
-    
+    const [isWindowScrolled, setIsWindowScrolled] = useState(false);
+
+    useEffect(() => {
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    });
+
+    const handleScroll = () => {
+        if (window.scrollY > 0) {
+            setIsWindowScrolled(true);
+        } else {
+            setIsWindowScrolled(false);
+        }
+    };
 
     const Projects = {
         projects: [
@@ -14,7 +29,7 @@ const HomeProjects = () => {
                 description:
                     "Web App that pulls data from a public API then displays it, search by Name, Houses and more",
                 repo: "https://github.com/Rhyyn/Harry-potter-character-displayer",
-                demo: "http://harry-potter-character-displayer.vercel.app/"
+                demo: "http://harry-potter-character-displayer.vercel.app/",
             },
             {
                 name: "Lost Ark Wandering Merchant Timer",
@@ -22,7 +37,7 @@ const HomeProjects = () => {
                 description:
                     "Web App made to track Wandering Merchants timers in the game Lost Ark, available for all Servers",
                 repo: "https://github.com/Rhyyn/Rhyn-Lost-Ark-Wandering-Merchant_Tracker",
-                demo: "https://lostark-merchant-tracker.netlify.app/"
+                demo: "https://lostark-merchant-tracker.netlify.app/",
             },
         ],
     };
@@ -31,11 +46,14 @@ const HomeProjects = () => {
         width: "90vw",
         margin: "0 auto",
         height: "100%",
-        backgroundColor: '#dff8eb',
-        boxShadow: "0px 17px 6px -3px rgba(0,0,0,0.2),0px 17px 14px 1px rgba(0,0,0,0.14),0px 17px 18px 3px rgba(0,0,0,0.12)", // 17px = y 
+        backgroundColor: "#dff8eb",
+        boxShadow:
+            "0px 17px 6px -3px rgba(0,0,0,0.2),0px 17px 14px 1px rgba(0,0,0,0.14),0px 17px 18px 3px rgba(0,0,0,0.12)", // 17px = y
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        flexDirection: "column",
     }));
-
-    
 
     const HomeProjectDiv = styled("div")(({ theme }) => ({
         [theme.breakpoints.up("mobile")]: {
@@ -54,7 +72,20 @@ const HomeProjects = () => {
     }));
     return (
         <HomeProjectsSection>
-            <Typography variant="h5" sx={{textAlign: 'center', color: 'secondary.main', fontWeight: '700', fontSize: '2rem'}}>My Projects</Typography>
+            <Typography
+                variant="h5"
+                sx={{
+                    textAlign: "center",
+                    color: "secondary.main",
+                    fontWeight: "700",
+                    fontSize: "2rem",
+                }}
+            >
+                My Projects
+            </Typography>
+            <Box sx={{ padding: "1rem", height: "70px" }} className="bounce">
+                {isWindowScrolled ? null : <BsFileArrowDown size={30} />}
+            </Box>
             <HomeProjectDiv>
                 {Projects.projects.map((project, index) => {
                     return (
