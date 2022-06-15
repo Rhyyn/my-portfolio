@@ -36,13 +36,13 @@ const NavBar = () => {
         <AppBar
             elevation={0}
             sx={{
-                maxWidth: "90vw",
+                maxWidth: "100%",
                 backgroundColor: "#fff",
                 height: "60px",
                 position: "static",
             }}
         >
-            <Container sx={{ width: "90vw", height: "60px", display: 'flex', justifyContent: 'center' }}>
+            <Container sx={{ width: "100vw", maxWidth: '100%', height: "60px", display: 'flex', justifyContent: 'center' }}>
                 {/* <Toolbar disableGutters sx={{minHeight: '60px', width: { mobile: "90%", tablet: '60%'}, margin: '0 auto'}}>
                   <Box
                         sx={{
