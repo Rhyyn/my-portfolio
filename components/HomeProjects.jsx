@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 
 const HomeProjects = () => {
 
-    const Content = {
+    const Content = { // Section Title with locales
         en: {
             sectionTitle: "My Projects",
             
@@ -21,7 +21,7 @@ const HomeProjects = () => {
     const { sectionTitle } =
         Content[locale];
 
-    const Projects = {
+    const Projects = { // list of the projects with locales for both English and french
         projects: [
             {
                 englishName: "Harry Potter Character Displayer",
@@ -33,6 +33,7 @@ const HomeProjects = () => {
                 frenchDescription:
                     "Site prenant des données d'une API publique, puis les tris par personnages, possibilité de chercher par Nom, Maisons etc..",
                 demo: "http://harry-potter-character-displayer.vercel.app/",
+                tech: ["React", "MaterialUI", "API"]
             },
             {
                 englishName: "Lost Ark Wandering Merchant Timer",
@@ -44,6 +45,7 @@ const HomeProjects = () => {
                     "Application faite pour suivre l'apparition de Marchants errants sur le jeu Lost Ark, disponible pour tous les serveurs.",
                 repo: "https://github.com/Rhyyn/Rhyn-Lost-Ark-Wandering-Merchant_Tracker",
                 demo: "https://lostark-merchant-tracker.netlify.app/",
+                tech: ["React", "Bootstrap", "Moment.js"]
             },
         ],
     };
@@ -81,7 +83,7 @@ const HomeProjects = () => {
     }));
     return (
         <HomeProjectsSection>
-            <Typography
+            <Typography // section title
                 variant="h5"
                 sx={{
                     textAlign: "center",
@@ -95,7 +97,7 @@ const HomeProjects = () => {
             </Typography>
 
             <HomeProjectDiv>
-                {Projects.projects.map((project, index) => {
+                {Projects.projects.map((project, index) => { // map through each project in Projects array then return a card for each one
                     return <MyCard key={index} project={project}></MyCard>;
                 })}
             </HomeProjectDiv>

@@ -13,6 +13,7 @@ import {
 import { SiGithub } from "react-icons/si";
 import { useRouter } from "next/router";
 import { BsBoxArrowUpRight } from "react-icons/bs";
+import TechBubble from "./techBubble";
 
 const MyCard = (props) => {
     const Content = {
@@ -21,14 +22,14 @@ const MyCard = (props) => {
             title: props.project.englishName,
             desc: props.project.englishDescription,
             demo: "See Website",
-            code: "See Code"
+            code: "See Code",
         },
         fr: {
             greeting: "Bonjour",
             title: props.project.frenchName,
             desc: props.project.frenchDescription,
             demo: "Voir le site",
-            code: "Voir le Code"
+            code: "Voir le Code",
         },
     };
     const router = useRouter();
@@ -42,54 +43,59 @@ const MyCard = (props) => {
                 margin: "1rem",
                 textAlign: "center",
                 color: "secondary.main",
-                minHeight: "650px",
+                minHeight: "710px",
             }}
         >
-            <CardHeader
+            <CardHeader // header
                 titleTypographyProps={{
                     fontSize: 18,
                 }}
                 sx={{ padding: "0.5rem" }}
                 title={title}
             ></CardHeader>
-            <CardMedia
+            <CardMedia // media = image
                 component="img"
                 image={props.project.image}
                 sx={{ maxHeight: "398px" }}
             ></CardMedia>
-            <CardContent>
-                <Typography variant="subtitle2" sx={{ minHeight: '90px'}}>{desc}</Typography>
-            </CardContent>
-
-            {/* <Box
+            <CardContent // content = project short description 
                 sx={{
                     display: "flex",
                     flexDirection: "column",
-                    justifyContent: "center",
+                    alignItems: "center",
                 }}
             >
-                <Link href={props.project.repo}>
-                    <a target="_blank">
-                        <SiGithub color="#45c14e" size={20} />
-                    </a>
-                </Link>
-                <Link href={props.project.repo}>
-                    <a target="_blank">
-                        <Typography variant="subtitle2">View Code</Typography>
-                    </a>
-                </Link>
-            </Box> */}
+                <Typography variant="subtitle2" sx={{ minHeight: "90px" }}>
+                    {desc}
+                </Typography>
+                <Box // div containing technologies used
+                    sx={{
+                        display: "flex",
+                        maxWidth: "80%",
+                        flexWrap: "wrap",
+                        justifyContent: "center",
+                        minHeight: "70px",
+                    }}
+                >
+                    {props.project.tech.map((tech, index) => {
+                        // map through each tech for the project and return each
+                        return (
+                            <TechBubble key={index} name={tech}></TechBubble>
+                        );
+                    })}
+                </Box>
+            </CardContent>
             <CardActions
                 sx={{ display: "flex", justifyContent: "space-evenly" }}
             >
-                <Button
+                <Button // See website button
                     sx={{
                         color: "primary.contrastText",
                         backgroundColor: "primary.main",
                         borderRadius: "15px",
                         width: "140px",
                         height: "35px",
-                        fontSize: '0.8rem'
+                        fontSize: "0.8rem",
                     }}
                     href={props.project.demo}
                     target="_blank"
@@ -97,21 +103,20 @@ const MyCard = (props) => {
                 >
                     {demo}
                 </Button>
-                <Button
+                <Button // see code button
                     sx={{
                         color: "primary.contrastText",
                         backgroundColor: "primary.main",
                         borderRadius: "15px",
                         width: "140px",
                         height: "35px",
-                        fontSize: '0.8rem'
+                        fontSize: "0.8rem",
                     }}
                     href={props.project.repo}
                     target="_blank"
                     endIcon={<SiGithub color="#fff" size={20} />}
                 >
                     {code}
-                    
                 </Button>
             </CardActions>
         </Card>
