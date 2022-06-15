@@ -11,8 +11,30 @@ import {
     Box,
 } from "@mui/material";
 import { SiGithub } from "react-icons/si";
+import { useRouter } from "next/router";
+import { BsBoxArrowUpRight } from "react-icons/bs";
 
 const MyCard = (props) => {
+    const Content = {
+        en: {
+            greeting: "Hello,", // h1
+            title: props.project.englishName,
+            desc: props.project.englishDescription,
+            demo: "See Website",
+            code: "See Code"
+        },
+        fr: {
+            greeting: "Bonjour",
+            title: props.project.frenchName,
+            desc: props.project.frenchDescription,
+            demo: "Voir le site",
+            code: "Voir le Code"
+        },
+    };
+    const router = useRouter();
+    const { locale, locales, defaultLocale, asPath } = useRouter();
+    const { greeting, title, desc, demo, code } = Content[locale];
+
     return (
         <Card
             sx={{
@@ -20,7 +42,7 @@ const MyCard = (props) => {
                 margin: "1rem",
                 textAlign: "center",
                 color: "secondary.main",
-                maxHeight: "660px",
+                minHeight: "650px",
             }}
         >
             <CardHeader
@@ -28,61 +50,68 @@ const MyCard = (props) => {
                     fontSize: 18,
                 }}
                 sx={{ padding: "0.5rem" }}
-                title={props.name}
+                title={title}
             ></CardHeader>
             <CardMedia
                 component="img"
-                image={props.image}
-                sx={{maxHeight: "398px"}}
+                image={props.project.image}
+                sx={{ maxHeight: "398px" }}
             ></CardMedia>
             <CardContent>
-                <Typography variant="subtitle2">{props.desc}</Typography>
+                <Typography variant="subtitle2" sx={{ minHeight: '90px'}}>{desc}</Typography>
             </CardContent>
 
-            <Box
+            {/* <Box
                 sx={{
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "center",
                 }}
             >
-                <Link href={props.repo}>
+                <Link href={props.project.repo}>
                     <a target="_blank">
                         <SiGithub color="#45c14e" size={20} />
                     </a>
                 </Link>
-                <Link href={props.repo}>
+                <Link href={props.project.repo}>
                     <a target="_blank">
                         <Typography variant="subtitle2">View Code</Typography>
                     </a>
                 </Link>
-            </Box>
+            </Box> */}
             <CardActions
                 sx={{ display: "flex", justifyContent: "space-evenly" }}
             >
                 <Button
-                    size="small"
                     sx={{
                         color: "primary.contrastText",
                         backgroundColor: "primary.main",
                         borderRadius: "15px",
-                        width: "120px",
+                        width: "140px",
+                        height: "35px",
+                        fontSize: '0.8rem'
                     }}
-                    href={props.demo}
+                    href={props.project.demo}
                     target="_blank"
+                    startIcon={<BsBoxArrowUpRight color="#fff" size={20} />}
                 >
-                    Live Demo
+                    {demo}
                 </Button>
                 <Button
-                    size="small"
                     sx={{
                         color: "primary.contrastText",
                         backgroundColor: "primary.main",
                         borderRadius: "15px",
-                        width: "120px",
+                        width: "140px",
+                        height: "35px",
+                        fontSize: '0.8rem'
                     }}
+                    href={props.project.repo}
+                    target="_blank"
+                    endIcon={<SiGithub color="#fff" size={20} />}
                 >
-                    Learn More
+                    {code}
+                    
                 </Button>
             </CardActions>
         </Card>
