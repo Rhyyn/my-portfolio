@@ -14,14 +14,16 @@ const ContactAboutMe = () => {
 
     const [mailText, setMailText] = useState("");
     const MyContactSection = styled("section")(({ theme }) => ({
-        width: "90vw",
+        width: "100vw",
+        maxWidth: '100%',
         margin: "0 auto",
         paddingTop: "4rem",
         // height: "100%",
         height: "800px",
         backgroundColor: "#dff8eb",
-        boxShadow:
-            "0px 17px 6px -3px rgba(0,0,0,0.2),0px 17px 14px 1px rgba(0,0,0,0.14),0px 17px 18px 3px rgba(0,0,0,0.12)", // 17px = y
+        // boxShadow:
+        //     "0px 17px 6px -3px rgba(0,0,0,0.2),0px 17px 14px 1px rgba(0,0,0,0.14),0px 17px 18px 3px rgba(0,0,0,0.12)", 
+            // 17px = y
         display: "flex",
         justifyContent: "space-evenly",
     }));
