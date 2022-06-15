@@ -42,9 +42,9 @@ const NavBar = () => {
                 position: "static",
             }}
         >
-            <Container sx={{ width: "90vw", height: '60px' }}>
-                <Toolbar disableGutters sx={{minHeight: '60px', width: { mobile: "90%", tablet: '60%'}, margin: '0 auto'}}>
-                    <Box
+            <Container sx={{ width: "90vw", height: "60px", display: 'flex', justifyContent: 'center' }}>
+                {/* <Toolbar disableGutters sx={{minHeight: '60px', width: { mobile: "90%", tablet: '60%'}, margin: '0 auto'}}>
+                  <Box
                         sx={{
                             flexGrow: 1,
                             display: { xs: "flex", md: "none" }
@@ -113,9 +113,10 @@ const NavBar = () => {
                                       }
                                   )}
                         </Menu>
-                    </Box>
-                    <LanguageSwitch></LanguageSwitch>
-                </Toolbar>
+                    </Box> 
+                   
+                </Toolbar> */}
+                <LanguageSwitch></LanguageSwitch>
             </Container>
         </AppBar>
     );
