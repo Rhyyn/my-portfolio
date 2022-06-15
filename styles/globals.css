@@ -12,7 +12,15 @@ a {
 }
 
 .bounce {
-  animation: bounce 2s infinite;
+  animation: fadeIn ease 1s, bounce 2s infinite;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes bounce {
@@ -24,5 +32,19 @@ a {
   }
   60% {
     transform: translateY(-5px);
+  }
+}
+
+.hidden {
+  animation: fadeOut ease 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
