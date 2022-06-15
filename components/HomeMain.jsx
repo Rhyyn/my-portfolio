@@ -1,8 +1,9 @@
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 import Link from "next/link";
 import { styled, shadows } from "@mui/system";
 import { useRouter } from "next/router";
 import { Typography, Box, Button } from "@mui/material";
+import { BsFileArrowDown } from "react-icons/bs";
 import {
     SiTypescript,
     SiJavascript,
@@ -15,10 +16,26 @@ import {
     SiLinkedin,
 } from "react-icons/si";
 
-
 const HomeMain = () => {
     const [hoverColorLink, setHoverColorLink] = useState("#104d2b");
     const [hoverColorGit, setHoverColorGit] = useState("#104d2b");
+    const [isWindowScrolled, setIsWindowScrolled] = useState(false);
+    const [arrowClass, setArrowClass] = useState("bounce");
+
+    useEffect(() => {
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    });
+
+    const handleScroll = () => {
+        if (window.scrollY > 0) {
+            setIsWindowScrolled(true);
+            setArrowClass("hidden");
+        } else {
+            setIsWindowScrolled(false);
+            setArrowClass("bounce");
+        }
+    };
     const Content = {
         en: {
             greeting: "Hello,", // h1
@@ -81,7 +98,7 @@ const HomeMain = () => {
     const HomeIntroSection = styled("section")(({ theme }) => ({
         width: "90vw",
         margin: "0 auto",
-        height: "80vh",
+        height: "calc(100vh - 60px)",
         backgroundColor: "#fff",
         boxShadow: theme.shadows[10],
         // background: `url(/wavyBackground.png)`,
@@ -110,7 +127,7 @@ const HomeMain = () => {
             justifyContent: "center",
             maxWidth: "20rem",
             margin: "0 auto",
-            marginBottom: "2rem",
+            marginBottom: "4rem",
             paddingTop: "2rem",
         },
         [theme.breakpoints.up("tablet")]: {
@@ -128,7 +145,7 @@ const HomeMain = () => {
         backgroundSize: "cover",
         display: "flex",
         justifyContent: "center",
-        height: '100%',
+        height: "100%",
         [theme.breakpoints.up("mobile")]: {
             // height: "40%",
             display: "flex",
@@ -197,6 +214,7 @@ const HomeMain = () => {
                         justifyContent: "center",
                         alignItems: "center",
                         minHeight: "380px",
+                        paddingTop: '5rem'
                     }}
                 >
                     <Typography // gretting text
@@ -239,7 +257,7 @@ const HomeMain = () => {
                             fontWeight: "600",
                             fontSize: { mobile: "0.9rem" },
                             color: "secondary.main",
-                            maxWidth: "20rem",
+                            maxWidth: "17rem",
                             textAlign: "center",
                         }}
                     >
@@ -313,7 +331,7 @@ const HomeMain = () => {
                                     sx={{
                                         textAlign: "center",
                                         minWidth: "94px",
-                                        padding: '0.2rem'
+                                        padding: "0.2rem",
                                     }}
                                 >
                                     <Typography
@@ -330,6 +348,12 @@ const HomeMain = () => {
                             );
                         })}
                     </HomeSkillsMobileDiv>
+                    <Box
+                        sx={{ padding: "1rem", height: "70px" }}
+                        className={arrowClass}
+                    >
+                        <BsFileArrowDown size={30} />
+                    </Box>
                 </Box>
             </HomeGreetingDiv>
         </HomeIntroSection>

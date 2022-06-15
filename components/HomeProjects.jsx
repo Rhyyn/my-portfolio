@@ -1,25 +1,10 @@
 import React from "react";
 import { styled } from "@mui/system";
-import { Box, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import MyCard from "./Card";
-import { BsFileArrowDown } from "react-icons/bs";
-import { useEffect, useState } from "react";
 
 const HomeProjects = () => {
-    const [isWindowScrolled, setIsWindowScrolled] = useState(false);
 
-    useEffect(() => {
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    });
-
-    const handleScroll = () => {
-        if (window.scrollY > 0) {
-            setIsWindowScrolled(true);
-        } else {
-            setIsWindowScrolled(false);
-        }
-    };
 
     const Projects = {
         projects: [
@@ -46,13 +31,14 @@ const HomeProjects = () => {
         width: "90vw",
         margin: "0 auto",
         height: "100%",
-        backgroundColor: "#dff8eb",
+        backgroundColor: "#fcfcfc",  
         boxShadow:
             "0px 17px 6px -3px rgba(0,0,0,0.2),0px 17px 14px 1px rgba(0,0,0,0.14),0px 17px 18px 3px rgba(0,0,0,0.12)", // 17px = y
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
         flexDirection: "column",
+        paddingTop: '3rem'
     }));
 
     const HomeProjectDiv = styled("div")(({ theme }) => ({
@@ -79,13 +65,12 @@ const HomeProjects = () => {
                     color: "secondary.main",
                     fontWeight: "700",
                     fontSize: "2rem",
+                    paddingBottom: '2rem'
                 }}
             >
                 My Projects
             </Typography>
-            <Box sx={{ padding: "1rem", height: "70px" }} className="bounce">
-                {isWindowScrolled ? null : <BsFileArrowDown size={30} />}
-            </Box>
+            
             <HomeProjectDiv>
                 {Projects.projects.map((project, index) => {
                     return (
