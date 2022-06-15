@@ -34,7 +34,6 @@ const LanguageSwitch = () => {
                         }}
                     >
                         <BiWorld size={30} color="#104d2b" />
-                        EN
                     </Typography>
                 </Link>
             ) : (
@@ -53,7 +52,6 @@ const LanguageSwitch = () => {
                         }}
                     >
                         <BiWorld size={30} color="#104d2b" />
-                        FR
                     </Typography>
                 </Link>
             )}
