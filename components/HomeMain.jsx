@@ -96,11 +96,12 @@ const HomeMain = () => {
     };
 
     const HomeIntroSection = styled("section")(({ theme }) => ({
-        width: "90vw",
+        width: "100vw",
+        maxWidth: "100%",
         margin: "0 auto",
         height: "calc(100vh - 60px)",
         backgroundColor: "#fff",
-        boxShadow: theme.shadows[10],
+        // boxShadow: theme.shadows[10],
         // background: `url(/wavyBackground.png)`,
         // backgroundRepeat: "no-repeat",
         // backgroundSize: "cover",
@@ -115,9 +116,9 @@ const HomeMain = () => {
             display: "flex",
             flexWrap: "wrap",
             justifyContent: "center",
-            maxWidth: "25rem",
+            maxWidth: "30rem",
             margin: "0 auto",
-            marginBottom: "2rem",
+            paddingTop: '2.5rem'
         },
     }));
     const HomeSkillsMobileDiv = styled("div")(({ theme }) => ({
@@ -127,7 +128,7 @@ const HomeMain = () => {
             justifyContent: "center",
             maxWidth: "20rem",
             margin: "0 auto",
-            marginBottom: "4rem",
+            // marginBottom: "4rem",
             paddingTop: "2rem",
         },
         [theme.breakpoints.up("tablet")]: {
@@ -214,16 +215,17 @@ const HomeMain = () => {
                         justifyContent: "center",
                         alignItems: "center",
                         minHeight: "380px",
-                        paddingTop: '5rem'
+                        paddingTop: "5rem",
                     }}
                 >
                     <Typography // gretting text
                         variant="h4"
                         sx={{
                             color: { mobile: "secondary.main" },
-                            fontSize: { mobile: "2.3rem", tablet: "3rem" },
+                            fontSize: { mobile: "2.5rem", tablet: "3rem" },
                             verticalAlign: "middle",
                             fontWeight: "600",
+                            paddingBottom: "0.5rem",
                         }}
                     >
                         {greeting}
@@ -244,8 +246,8 @@ const HomeMain = () => {
                         sx={{
                             color: "secondary.main",
                             fontWeight: "500",
-                            fontSize: { mobile: "1.5rem", tablet: "2rem" },
-                            marginBottom: "1rem",
+                            fontSize: { mobile: "1.7rem", tablet: "2rem" },
+                            paddingBottom: "1.7rem",
                             fontWeight: "700",
                         }}
                     >
@@ -255,9 +257,9 @@ const HomeMain = () => {
                         variant="subtitle2"
                         sx={{
                             fontWeight: "600",
-                            fontSize: { mobile: "0.9rem" },
+                            fontSize: { mobile: "1rem" },
                             color: "secondary.main",
-                            maxWidth: "17rem",
+                            maxWidth: "19rem",
                             textAlign: "center",
                         }}
                     >
@@ -304,15 +306,16 @@ const HomeMain = () => {
                                 <Box
                                     key={index}
                                     sx={{
-                                        padding: "0 0.5rem",
+                                        padding: "0 1.5rem 2rem 1.5rem",
                                         textAlign: "center",
-                                        minWidth: "94px",
+                                        minWidth: "150px",
                                     }}
                                 >
                                     <Typography
                                         sx={{
                                             color: "secondary.main",
                                             fontWeight: "500",
+                                            fontSize: '1.2rem'
                                         }}
                                     >
                                         {skill.name}
@@ -332,6 +335,7 @@ const HomeMain = () => {
                                         textAlign: "center",
                                         minWidth: "94px",
                                         padding: "0.2rem",
+                                        paddingBottom: "1.4rem",
                                     }}
                                 >
                                     <Typography
@@ -352,7 +356,7 @@ const HomeMain = () => {
                         sx={{ padding: "1rem", height: "70px" }}
                         className={arrowClass}
                     >
-                        <BsFileArrowDown size={30} />
+                        <BsFileArrowDown size={30} color="#00324b"/>
                     </Box>
                 </Box>
             </HomeGreetingDiv>
